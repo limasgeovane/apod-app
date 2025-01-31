@@ -12,6 +12,16 @@
 		452D7F8F2D4C660700584A75 /* FavoritesApodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452D7F8E2D4C660700584A75 /* FavoritesApodViewController.swift */; };
 		452D7F912D4C6A0200584A75 /* FavoritesApodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452D7F902D4C6A0200584A75 /* FavoritesApodTableViewCell.swift */; };
 		452D7F932D4C839E00584A75 /* Apod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452D7F922D4C839E00584A75 /* Apod.swift */; };
+		45B5002C2D4C915F00EE5939 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5002B2D4C915C00EE5939 /* Network.swift */; };
+		45B5002E2D4C917700EE5939 /* NetworkBaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5002D2D4C917600EE5939 /* NetworkBaseURL.swift */; };
+		45B500302D4C91D200EE5939 /* NetworkDeserialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5002F2D4C91D100EE5939 /* NetworkDeserialization.swift */; };
+		45B500322D4C91E000EE5939 /* NetworkMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B500312D4C91DF00EE5939 /* NetworkMethod.swift */; };
+		45B500342D4C91F100EE5939 /* NetworkParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B500332D4C91F000EE5939 /* NetworkParameterEncoding.swift */; };
+		45B500362D4C91FE00EE5939 /* NetworkRequestConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B500352D4C91FD00EE5939 /* NetworkRequestConfigurator.swift */; };
+		45B500382D4C923B00EE5939 /* NetworkRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B500372D4C923A00EE5939 /* NetworkRequester.swift */; };
+		45B5003A2D4C925600EE5939 /* AlamofireNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B500392D4C925500EE5939 /* AlamofireNetworkRequest.swift */; };
+		45B5003C2D4C931700EE5939 /* ApodRequestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5003B2D4C931000EE5939 /* ApodRequestConfiguration.swift */; };
+		45B5003E2D4C954E00EE5939 /* ApodRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5003D2D4C954A00EE5939 /* ApodRepository.swift */; };
 		45F27D642D4BF2D50045747A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45F27D5D2D4BF2D50045747A /* Assets.xcassets */; };
 		45F27D662D4BF2D50045747A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45F27D602D4BF2D50045747A /* LaunchScreen.storyboard */; };
 		45F27D672D4BF2D50045747A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F27D5C2D4BF2D50045747A /* AppDelegate.swift */; };
@@ -59,6 +69,16 @@
 		452D7F922D4C839E00584A75 /* Apod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apod.swift; sourceTree = "<group>"; };
 		4562E7F02D4C849B00E1731D /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4562E7F42D4C84A300E1731D /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45B5002B2D4C915C00EE5939 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		45B5002D2D4C917600EE5939 /* NetworkBaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkBaseURL.swift; sourceTree = "<group>"; };
+		45B5002F2D4C91D100EE5939 /* NetworkDeserialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDeserialization.swift; sourceTree = "<group>"; };
+		45B500312D4C91DF00EE5939 /* NetworkMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMethod.swift; sourceTree = "<group>"; };
+		45B500332D4C91F000EE5939 /* NetworkParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkParameterEncoding.swift; sourceTree = "<group>"; };
+		45B500352D4C91FD00EE5939 /* NetworkRequestConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestConfigurator.swift; sourceTree = "<group>"; };
+		45B500372D4C923A00EE5939 /* NetworkRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequester.swift; sourceTree = "<group>"; };
+		45B500392D4C925500EE5939 /* AlamofireNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkRequest.swift; sourceTree = "<group>"; };
+		45B5003B2D4C931000EE5939 /* ApodRequestConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodRequestConfiguration.swift; sourceTree = "<group>"; };
+		45B5003D2D4C954A00EE5939 /* ApodRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodRepository.swift; sourceTree = "<group>"; };
 		45F27CEC2D4BB5220045747A /* apod-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "apod-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F27D022D4BB5240045747A /* apod-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "apod-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F27D0C2D4BB5240045747A /* apod-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "apod-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +179,50 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		45B500262D4C902900EE5939 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				45F27D852D4C280D0045747A /* Fonts */,
+				45F27D5C2D4BF2D50045747A /* AppDelegate.swift */,
+				45F27D5D2D4BF2D50045747A /* Assets.xcassets */,
+				45F27D5E2D4BF2D50045747A /* Info.plist */,
+				45F27D602D4BF2D50045747A /* LaunchScreen.storyboard */,
+				45F27D612D4BF2D50045747A /* SceneDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		45B500272D4C912800EE5939 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				45B500282D4C913A00EE5939 /* Commons */,
+				45B500292D4C914400EE5939 /* Providers */,
+				45B5002B2D4C915C00EE5939 /* Network.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		45B500282D4C913A00EE5939 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				45B5002D2D4C917600EE5939 /* NetworkBaseURL.swift */,
+				45B500312D4C91DF00EE5939 /* NetworkMethod.swift */,
+				45B500332D4C91F000EE5939 /* NetworkParameterEncoding.swift */,
+				45B500352D4C91FD00EE5939 /* NetworkRequestConfigurator.swift */,
+				45B5002F2D4C91D100EE5939 /* NetworkDeserialization.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		45B500292D4C914400EE5939 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				45B500392D4C925500EE5939 /* AlamofireNetworkRequest.swift */,
+				45B500372D4C923A00EE5939 /* NetworkRequester.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
 		45F27CE32D4BB5220045747A = {
 			isa = PBXGroup;
 			children = (
@@ -184,14 +248,10 @@
 		45F27D632D4BF2D50045747A /* apod-app */ = {
 			isa = PBXGroup;
 			children = (
-				45F27D852D4C280D0045747A /* Fonts */,
 				45F27D822D4C10B80045747A /* Extensions */,
 				45F27D722D4BF2E30045747A /* Features */,
-				45F27D5C2D4BF2D50045747A /* AppDelegate.swift */,
-				45F27D5D2D4BF2D50045747A /* Assets.xcassets */,
-				45F27D5E2D4BF2D50045747A /* Info.plist */,
-				45F27D602D4BF2D50045747A /* LaunchScreen.storyboard */,
-				45F27D612D4BF2D50045747A /* SceneDelegate.swift */,
+				45B500272D4C912800EE5939 /* Network */,
+				45B500262D4C902900EE5939 /* Resources */,
 			);
 			path = "apod-app";
 			sourceTree = "<group>";
@@ -243,6 +303,8 @@
 		45F27D752D4BF3150045747A /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				45B5003D2D4C954A00EE5939 /* ApodRepository.swift */,
+				45B5003B2D4C931000EE5939 /* ApodRequestConfiguration.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -589,13 +651,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				45F27D842D4C10F00045747A /* UIFont+Ext.swift in Sources */,
+				45B500322D4C91E000EE5939 /* NetworkMethod.swift in Sources */,
+				45B500362D4C91FE00EE5939 /* NetworkRequestConfigurator.swift in Sources */,
 				452D7F912D4C6A0200584A75 /* FavoritesApodTableViewCell.swift in Sources */,
 				45F27D7F2D4BF5250045747A /* ApodView.swift in Sources */,
+				45B500342D4C91F100EE5939 /* NetworkParameterEncoding.swift in Sources */,
 				45F27D672D4BF2D50045747A /* AppDelegate.swift in Sources */,
+				45B5003E2D4C954E00EE5939 /* ApodRepository.swift in Sources */,
 				45F27D812D4BFBB80045747A /* ApodViewModel.swift in Sources */,
+				45B5003C2D4C931700EE5939 /* ApodRequestConfiguration.swift in Sources */,
+				45B500302D4C91D200EE5939 /* NetworkDeserialization.swift in Sources */,
+				45B5002C2D4C915F00EE5939 /* Network.swift in Sources */,
+				45B5002E2D4C917700EE5939 /* NetworkBaseURL.swift in Sources */,
+				45B500382D4C923B00EE5939 /* NetworkRequester.swift in Sources */,
 				45F27D682D4BF2D50045747A /* SceneDelegate.swift in Sources */,
 				45F27D692D4BF2D50045747A /* ApodViewController.swift in Sources */,
 				452D7F932D4C839E00584A75 /* Apod.swift in Sources */,
+				45B5003A2D4C925600EE5939 /* AlamofireNetworkRequest.swift in Sources */,
 				452D7F8F2D4C660700584A75 /* FavoritesApodViewController.swift in Sources */,
 				452D7F8D2D4C65C900584A75 /* FavoritesApodView.swift in Sources */,
 			);
@@ -655,7 +727,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CZM8PU3P9W;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "apod-app/Info.plist";
+				INFOPLIST_FILE = "apod-app/Resources/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Apod;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -689,7 +761,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CZM8PU3P9W;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "apod-app/Info.plist";
+				INFOPLIST_FILE = "apod-app/Resources/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Apod;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
