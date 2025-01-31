@@ -7,10 +7,17 @@
 
 import UIKit
 
+protocol ApodViewControllerLogic: AnyObject {
+    func displayApod(viewModel: ApodViewModel)
+    func displayError()
+}
+
 class ApodViewController: UIViewController {
-    private let contentView: ApodView
+    private let interactor: ApodInteractorLogic
+    private let contentView: ApodViewLogic
     
-    init(contentView: ApodView) {
+    init(interactor: ApodInteractorLogic, contentView: ApodViewLogic) {
+        self.interactor = interactor
         self.contentView = contentView
         super.init(nibName: nil, bundle: nil)
     }
@@ -19,17 +26,41 @@ class ApodViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     override func loadView() {
         view = contentView
+        contentView.delegate = self
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigation()
+        interactor.requestApod()
+    }
+    
+    private func setupNavigation() {
         title = "Apod"
-//        navigationController?.navigationBar.prefersLargeTitles = true
-      //  navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.appName]
-        let favoriteButton = UIBarButtonItem(image: UIImage(systemName: "star"), style: .plain, target: self, action: nil)
+        let favoriteButton = UIBarButtonItem(
+            image: UIImage(systemName: "star"),
+            style: .plain,
+            target: self,
+            action: nil
+        )
         navigationItem.rightBarButtonItem = favoriteButton
+    }
+}
+
+extension ApodViewController: ApodViewControllerLogic {
+    func displayApod(viewModel: ApodViewModel) {
+        contentView.setupView(viewModel: viewModel)
+    }
+    
+    func displayError() {
+        
+    }
+}
+
+extension ApodViewController: ApodViewDelegate {
+    func apodViewDidTapPrevious() {
+        interactor.requestPreviousApod()
     }
 }

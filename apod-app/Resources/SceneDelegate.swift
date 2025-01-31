@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
 
-        let viewController = ApodViewController(contentView: ApodView())
+        let viewController = ApodFactory.make()
 
 //        let viewController = FavoritesApodViewController(contentView: FavoritesApodView())
         let navigationController = UINavigationController(rootViewController: viewController)

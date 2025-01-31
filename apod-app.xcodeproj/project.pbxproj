@@ -22,6 +22,13 @@
 		45B5003A2D4C925600EE5939 /* AlamofireNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B500392D4C925500EE5939 /* AlamofireNetworkRequest.swift */; };
 		45B5003C2D4C931700EE5939 /* ApodRequestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5003B2D4C931000EE5939 /* ApodRequestConfiguration.swift */; };
 		45B5003E2D4C954E00EE5939 /* ApodRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5003D2D4C954A00EE5939 /* ApodRepository.swift */; };
+		45B500402D4C979A00EE5939 /* ApodInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5003F2D4C979400EE5939 /* ApodInteractor.swift */; };
+		45B500422D4C98D100EE5939 /* Date+FormattedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B500412D4C98BE00EE5939 /* Date+FormattedString.swift */; };
+		45B500442D4C996B00EE5939 /* ApodPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B500432D4C996700EE5939 /* ApodPresenter.swift */; };
+		45B500462D4C9B4100EE5939 /* String+FormattedDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B500452D4C9B3900EE5939 /* String+FormattedDate.swift */; };
+		45B500492D4C9F4A00EE5939 /* ApodFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B500482D4C9F4500EE5939 /* ApodFactory.swift */; };
+		45B5004B2D4CA1BD00EE5939 /* ApodMediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5004A2D4CA1B900EE5939 /* ApodMediaView.swift */; };
+		45B5004D2D4CAB0000EE5939 /* ApodMediaProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5004C2D4CAAF300EE5939 /* ApodMediaProgressView.swift */; };
 		45F27D642D4BF2D50045747A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45F27D5D2D4BF2D50045747A /* Assets.xcassets */; };
 		45F27D662D4BF2D50045747A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45F27D602D4BF2D50045747A /* LaunchScreen.storyboard */; };
 		45F27D672D4BF2D50045747A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F27D5C2D4BF2D50045747A /* AppDelegate.swift */; };
@@ -79,6 +86,13 @@
 		45B500392D4C925500EE5939 /* AlamofireNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkRequest.swift; sourceTree = "<group>"; };
 		45B5003B2D4C931000EE5939 /* ApodRequestConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodRequestConfiguration.swift; sourceTree = "<group>"; };
 		45B5003D2D4C954A00EE5939 /* ApodRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodRepository.swift; sourceTree = "<group>"; };
+		45B5003F2D4C979400EE5939 /* ApodInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodInteractor.swift; sourceTree = "<group>"; };
+		45B500412D4C98BE00EE5939 /* Date+FormattedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+FormattedString.swift"; sourceTree = "<group>"; };
+		45B500432D4C996700EE5939 /* ApodPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodPresenter.swift; sourceTree = "<group>"; };
+		45B500452D4C9B3900EE5939 /* String+FormattedDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+FormattedDate.swift"; sourceTree = "<group>"; };
+		45B500482D4C9F4500EE5939 /* ApodFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodFactory.swift; sourceTree = "<group>"; };
+		45B5004A2D4CA1B900EE5939 /* ApodMediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodMediaView.swift; sourceTree = "<group>"; };
+		45B5004C2D4CAAF300EE5939 /* ApodMediaProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodMediaProgressView.swift; sourceTree = "<group>"; };
 		45F27CEC2D4BB5220045747A /* apod-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "apod-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F27D022D4BB5240045747A /* apod-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "apod-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F27D0C2D4BB5240045747A /* apod-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "apod-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,6 +237,14 @@
 			path = Providers;
 			sourceTree = "<group>";
 		};
+		45B500472D4C9F3C00EE5939 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				45B500482D4C9F4500EE5939 /* ApodFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
 		45F27CE32D4BB5220045747A = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +307,7 @@
 		45F27D732D4BF2F70045747A /* Apod */ = {
 			isa = PBXGroup;
 			children = (
+				45B500472D4C9F3C00EE5939 /* Factory */,
 				45F27D742D4BF3070045747A /* Model */,
 				45F27D752D4BF3150045747A /* Repository */,
 				45F27D762D4BF31D0045747A /* Scene */,
@@ -333,6 +356,7 @@
 		45F27D782D4BF3440045747A /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				45B5003F2D4C979400EE5939 /* ApodInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -340,6 +364,7 @@
 		45F27D792D4BF3500045747A /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				45B500432D4C996700EE5939 /* ApodPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -348,6 +373,8 @@
 			isa = PBXGroup;
 			children = (
 				45F27D7E2D4BF5250045747A /* ApodView.swift */,
+				45B5004A2D4CA1B900EE5939 /* ApodMediaView.swift */,
+				45B5004C2D4CAAF300EE5939 /* ApodMediaProgressView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -371,6 +398,8 @@
 		45F27D822D4C10B80045747A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				45B500452D4C9B3900EE5939 /* String+FormattedDate.swift */,
+				45B500412D4C98BE00EE5939 /* Date+FormattedString.swift */,
 				45F27D832D4C10F00045747A /* UIFont+Ext.swift */,
 			);
 			path = Extensions;
@@ -659,17 +688,24 @@
 				45F27D672D4BF2D50045747A /* AppDelegate.swift in Sources */,
 				45B5003E2D4C954E00EE5939 /* ApodRepository.swift in Sources */,
 				45F27D812D4BFBB80045747A /* ApodViewModel.swift in Sources */,
+				45B5004D2D4CAB0000EE5939 /* ApodMediaProgressView.swift in Sources */,
+				45B500402D4C979A00EE5939 /* ApodInteractor.swift in Sources */,
 				45B5003C2D4C931700EE5939 /* ApodRequestConfiguration.swift in Sources */,
 				45B500302D4C91D200EE5939 /* NetworkDeserialization.swift in Sources */,
 				45B5002C2D4C915F00EE5939 /* Network.swift in Sources */,
 				45B5002E2D4C917700EE5939 /* NetworkBaseURL.swift in Sources */,
 				45B500382D4C923B00EE5939 /* NetworkRequester.swift in Sources */,
+				45B5004B2D4CA1BD00EE5939 /* ApodMediaView.swift in Sources */,
 				45F27D682D4BF2D50045747A /* SceneDelegate.swift in Sources */,
 				45F27D692D4BF2D50045747A /* ApodViewController.swift in Sources */,
 				452D7F932D4C839E00584A75 /* Apod.swift in Sources */,
+				45B500422D4C98D100EE5939 /* Date+FormattedString.swift in Sources */,
+				45B500462D4C9B4100EE5939 /* String+FormattedDate.swift in Sources */,
 				45B5003A2D4C925600EE5939 /* AlamofireNetworkRequest.swift in Sources */,
 				452D7F8F2D4C660700584A75 /* FavoritesApodViewController.swift in Sources */,
 				452D7F8D2D4C65C900584A75 /* FavoritesApodView.swift in Sources */,
+				45B500442D4C996B00EE5939 /* ApodPresenter.swift in Sources */,
+				45B500492D4C9F4A00EE5939 /* ApodFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
