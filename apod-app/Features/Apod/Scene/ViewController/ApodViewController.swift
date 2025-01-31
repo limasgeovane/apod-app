@@ -59,8 +59,12 @@ extension ApodViewController: ApodViewControllerLogic {
     }
 }
 
-extension ApodViewController: ApodViewDelegate {
+extension ApodViewController: ApodButtonsViewDelegate {
     func apodViewDidTapPrevious() {
         interactor.requestPreviousApod()
+    }
+    
+    func apodViewDidTapNext() {
+        interactor.requestNextApod()
     }
 }

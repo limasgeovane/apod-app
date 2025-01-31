@@ -8,28 +8,22 @@
 import UIKit
 import Kingfisher
 
-protocol ApodViewDelegate: AnyObject {
-    func apodViewDidTapPrevious()
-}
-
 protocol ApodViewLogic: UIView {
-    var delegate: ApodViewDelegate? { get set }
+    var delegate: ApodButtonsViewDelegate? { get set }
     func setupView(viewModel: ApodViewModel)
 }
 
 class ApodView: UIView {
     private let mediaView = ApodMediaView()
-
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .title
         return label
     }()
     
     private let descriptionTitleLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Description:"
         label.font = .primary
         return label
@@ -38,7 +32,6 @@ class ApodView: UIView {
     private let descriptionTextView: UITextView = {
         let textView = UITextView()
         textView.font = .secondary
-    //    textView.textAlignment = .justified
         textView.textContainerInset = .zero
         textView.textContainer.lineFragmentPadding = 0
         textView.showsVerticalScrollIndicator = false
@@ -47,7 +40,6 @@ class ApodView: UIView {
     
     private let dateTitleLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Date:"
         label.font = .primary
         return label
@@ -55,15 +47,13 @@ class ApodView: UIView {
     
     private let dateLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .secondary
         return label
     }()
     
     private let changeDateButton: UIButton = {
         let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Change Date", for: .normal)
+        button.setTitle("Change date", for: .normal)
         button.titleLabel?.font = .primary
         button.setTitleColor(.systemBlue, for: .normal)
         return button
@@ -71,7 +61,6 @@ class ApodView: UIView {
     
     private lazy var dateStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [dateTitleLabel, dateLabel, changeDateButton])
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
         return stackView
     }()
@@ -88,34 +77,34 @@ class ApodView: UIView {
         return stackView
     }()
     
-    private lazy var previousButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(previousButtonPressed), for: .touchUpInside)
-        button.setTitle("Previous Apod", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .primary
-        button.backgroundColor = .systemBlue
-        button.layer.cornerRadius = 22
-        return button
+    private let apodButtonsView: ApodButtonsView = {
+        let view = ApodButtonsView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
-    weak var delegate: ApodViewDelegate?
-
+    weak var delegate: ApodButtonsViewDelegate?
+    
     init() {
         super.init(frame: .zero)
         setupUI()
         setupUIConstraints()
+        apodButtonsView.delegate = self
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private func setupNextButtonVisibility() {
+        apodButtonsView.nextButton.isHidden = dateLabel.text == Date().formattedStringBR
+    }
+    
     private func setupUI() {
         backgroundColor = .systemBackground
+        apodButtonsView.nextButton.isHidden = true
         addSubview(apodStackView)
-        addSubview(previousButton)
+        addSubview(apodButtonsView)
     }
     
     private func setupUIConstraints() {
@@ -126,16 +115,11 @@ class ApodView: UIView {
             
             dateTitleLabel.widthAnchor.constraint(equalToConstant: 44),
             
-            previousButton.heightAnchor.constraint(equalToConstant: 44),
-            previousButton.topAnchor.constraint(equalTo: apodStackView.bottomAnchor, constant: 16),
-            previousButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
-            previousButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
-            previousButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -56)
+            apodButtonsView.topAnchor.constraint(equalTo: apodStackView.bottomAnchor, constant: 16),
+            apodButtonsView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            apodButtonsView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
+            apodButtonsView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -56)
         ])
-    }
-    
-    @objc private func previousButtonPressed() {
-        delegate?.apodViewDidTapPrevious()
     }
 }
 
@@ -145,5 +129,17 @@ extension ApodView: ApodViewLogic {
         titleLabel.text = viewModel.title
         descriptionTextView.text = viewModel.description
         dateLabel.text = viewModel.date
+        setupNextButtonVisibility()
+    }
+}
+
+extension ApodView: ApodButtonsViewDelegate {
+    func apodViewDidTapPrevious() {
+        delegate?.apodViewDidTapPrevious()
+        setupNextButtonVisibility()
+    }
+    
+    func apodViewDidTapNext() {
+        delegate?.apodViewDidTapNext()
     }
 }
