@@ -9,7 +9,7 @@ import UIKit
 
 extension UIFont {
     static let appName: UIFont = {
-        return UIFont(name: "FuturaCyrillicBold", size: 34) ?? UIFont.systemFont(ofSize: 2, weight: .bold)
+        return UIFont(name: "FuturaCyrillicBold", size: 34) ?? UIFont.systemFont(ofSize: 14, weight: .bold)
     }()
     
     static let title: UIFont = {
@@ -21,6 +21,6 @@ extension UIFont {
     }()
     
     static let secondary: UIFont = {
-        return UIFont(name: "Roboto-Light", size: 18) ?? UIFont.systemFont(ofSize: 2, weight: .regular)
+        return UIFont(name: "Roboto-Light", size: 16) ?? UIFont.systemFont(ofSize: 2, weight: .regular)
     }()
 }
