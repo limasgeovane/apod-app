@@ -6,6 +6,29 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		452D7F8D2D4C65C900584A75 /* FavoritesApodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452D7F8C2D4C65C900584A75 /* FavoritesApodView.swift */; };
+		452D7F8F2D4C660700584A75 /* FavoritesApodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452D7F8E2D4C660700584A75 /* FavoritesApodViewController.swift */; };
+		452D7F912D4C6A0200584A75 /* FavoritesApodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452D7F902D4C6A0200584A75 /* FavoritesApodTableViewCell.swift */; };
+		45F27D642D4BF2D50045747A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45F27D5D2D4BF2D50045747A /* Assets.xcassets */; };
+		45F27D662D4BF2D50045747A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45F27D602D4BF2D50045747A /* LaunchScreen.storyboard */; };
+		45F27D672D4BF2D50045747A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F27D5C2D4BF2D50045747A /* AppDelegate.swift */; };
+		45F27D682D4BF2D50045747A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F27D612D4BF2D50045747A /* SceneDelegate.swift */; };
+		45F27D692D4BF2D50045747A /* ApodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F27D622D4BF2D50045747A /* ApodViewController.swift */; };
+		45F27D6C2D4BF2DB0045747A /* apod_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F27D6A2D4BF2DB0045747A /* apod_appTests.swift */; };
+		45F27D702D4BF2DE0045747A /* apod_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F27D6D2D4BF2DE0045747A /* apod_appUITests.swift */; };
+		45F27D712D4BF2DE0045747A /* apod_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F27D6E2D4BF2DE0045747A /* apod_appUITestsLaunchTests.swift */; };
+		45F27D7F2D4BF5250045747A /* ApodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F27D7E2D4BF5250045747A /* ApodView.swift */; };
+		45F27D812D4BFBB80045747A /* ApodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F27D802D4BFBB80045747A /* ApodViewModel.swift */; };
+		45F27D842D4C10F00045747A /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F27D832D4C10F00045747A /* UIFont+Ext.swift */; };
+		45F27D8D2D4C281A0045747A /* FuturaCyrillicLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45F27D8B2D4C281A0045747A /* FuturaCyrillicLight.ttf */; };
+		45F27D902D4C281A0045747A /* FuturaCyrillicMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45F27D8C2D4C281A0045747A /* FuturaCyrillicMedium.ttf */; };
+		45F27D912D4C281A0045747A /* FuturaCyrillicBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45F27D862D4C281A0045747A /* FuturaCyrillicBold.ttf */; };
+		45F27D992D4C28A30045747A /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45F27D962D4C28A30045747A /* Roboto-Bold.ttf */; };
+		45F27D9A2D4C28A30045747A /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45F27D972D4C28A30045747A /* Roboto-Light.ttf */; };
+		45F27D9B2D4C28A30045747A /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45F27D982D4C28A30045747A /* Roboto-Medium.ttf */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		45F27D032D4BB5240045747A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,41 +47,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		452D7F8C2D4C65C900584A75 /* FavoritesApodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesApodView.swift; sourceTree = "<group>"; };
+		452D7F8E2D4C660700584A75 /* FavoritesApodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesApodViewController.swift; sourceTree = "<group>"; };
+		452D7F902D4C6A0200584A75 /* FavoritesApodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesApodTableViewCell.swift; sourceTree = "<group>"; };
 		45F27CEC2D4BB5220045747A /* apod-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "apod-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F27D022D4BB5240045747A /* apod-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "apod-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F27D0C2D4BB5240045747A /* apod-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "apod-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		45F27D5C2D4BF2D50045747A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		45F27D5D2D4BF2D50045747A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		45F27D5E2D4BF2D50045747A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45F27D5F2D4BF2D50045747A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		45F27D612D4BF2D50045747A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		45F27D622D4BF2D50045747A /* ApodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodViewController.swift; sourceTree = "<group>"; };
+		45F27D6A2D4BF2DB0045747A /* apod_appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apod_appTests.swift; sourceTree = "<group>"; };
+		45F27D6D2D4BF2DE0045747A /* apod_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apod_appUITests.swift; sourceTree = "<group>"; };
+		45F27D6E2D4BF2DE0045747A /* apod_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apod_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		45F27D7E2D4BF5250045747A /* ApodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodView.swift; sourceTree = "<group>"; };
+		45F27D802D4BFBB80045747A /* ApodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodViewModel.swift; sourceTree = "<group>"; };
+		45F27D832D4C10F00045747A /* UIFont+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
+		45F27D862D4C281A0045747A /* FuturaCyrillicBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaCyrillicBold.ttf; sourceTree = "<group>"; };
+		45F27D8B2D4C281A0045747A /* FuturaCyrillicLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaCyrillicLight.ttf; sourceTree = "<group>"; };
+		45F27D8C2D4C281A0045747A /* FuturaCyrillicMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaCyrillicMedium.ttf; sourceTree = "<group>"; };
+		45F27D962D4C28A30045747A /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		45F27D972D4C28A30045747A /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		45F27D982D4C28A30045747A /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		45F27D142D4BB5240045747A /* Exceptions for "apod-app" folder in "apod-app" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 45F27CEB2D4BB5220045747A /* apod-app */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		45F27CEE2D4BB5220045747A /* apod-app */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				45F27D142D4BB5240045747A /* Exceptions for "apod-app" folder in "apod-app" target */,
-			);
-			path = "apod-app";
-			sourceTree = "<group>";
-		};
-		45F27D052D4BB5240045747A /* apod-appTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "apod-appTests";
-			sourceTree = "<group>";
-		};
-		45F27D0F2D4BB5240045747A /* apod-appUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "apod-appUITests";
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		45F27CE92D4BB5220045747A /* Frameworks */ = {
@@ -85,12 +98,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		452D7F8A2D4C655300584A75 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				452D7F8E2D4C660700584A75 /* FavoritesApodViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		452D7F8B2D4C655D00584A75 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				452D7F8C2D4C65C900584A75 /* FavoritesApodView.swift */,
+				452D7F902D4C6A0200584A75 /* FavoritesApodTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		45F27CE32D4BB5220045747A = {
 			isa = PBXGroup;
 			children = (
-				45F27CEE2D4BB5220045747A /* apod-app */,
-				45F27D052D4BB5240045747A /* apod-appTests */,
-				45F27D0F2D4BB5240045747A /* apod-appUITests */,
+				45F27D632D4BF2D50045747A /* apod-app */,
+				45F27D6B2D4BF2DB0045747A /* apod-appTests */,
+				45F27D6F2D4BF2DE0045747A /* apod-appUITests */,
 				45F27CED2D4BB5220045747A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,6 +133,167 @@
 				45F27D0C2D4BB5240045747A /* apod-appUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		45F27D632D4BF2D50045747A /* apod-app */ = {
+			isa = PBXGroup;
+			children = (
+				45F27D852D4C280D0045747A /* Fonts */,
+				45F27D822D4C10B80045747A /* Extensions */,
+				45F27D722D4BF2E30045747A /* Features */,
+				45F27D5C2D4BF2D50045747A /* AppDelegate.swift */,
+				45F27D5D2D4BF2D50045747A /* Assets.xcassets */,
+				45F27D5E2D4BF2D50045747A /* Info.plist */,
+				45F27D602D4BF2D50045747A /* LaunchScreen.storyboard */,
+				45F27D612D4BF2D50045747A /* SceneDelegate.swift */,
+			);
+			path = "apod-app";
+			sourceTree = "<group>";
+		};
+		45F27D6B2D4BF2DB0045747A /* apod-appTests */ = {
+			isa = PBXGroup;
+			children = (
+				45F27D6A2D4BF2DB0045747A /* apod_appTests.swift */,
+			);
+			path = "apod-appTests";
+			sourceTree = "<group>";
+		};
+		45F27D6F2D4BF2DE0045747A /* apod-appUITests */ = {
+			isa = PBXGroup;
+			children = (
+				45F27D6D2D4BF2DE0045747A /* apod_appUITests.swift */,
+				45F27D6E2D4BF2DE0045747A /* apod_appUITestsLaunchTests.swift */,
+			);
+			path = "apod-appUITests";
+			sourceTree = "<group>";
+		};
+		45F27D722D4BF2E30045747A /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				45F27D732D4BF2F70045747A /* Apod */,
+				45F27D772D4BF32B0045747A /* FavoritesApod */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		45F27D732D4BF2F70045747A /* Apod */ = {
+			isa = PBXGroup;
+			children = (
+				45F27D742D4BF3070045747A /* Model */,
+				45F27D752D4BF3150045747A /* Repository */,
+				45F27D762D4BF31D0045747A /* Scene */,
+			);
+			path = Apod;
+			sourceTree = "<group>";
+		};
+		45F27D742D4BF3070045747A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		45F27D752D4BF3150045747A /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		45F27D762D4BF31D0045747A /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				45F27D782D4BF3440045747A /* Interactor */,
+				45F27D792D4BF3500045747A /* Presenter */,
+				45F27D7D2D4BF37A0045747A /* ViewController */,
+				45F27D7C2D4BF36E0045747A /* ViewModel */,
+				45F27D7A2D4BF3600045747A /* Views */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		45F27D772D4BF32B0045747A /* FavoritesApod */ = {
+			isa = PBXGroup;
+			children = (
+				452D7F8A2D4C655300584A75 /* ViewController */,
+				452D7F8B2D4C655D00584A75 /* Views */,
+			);
+			path = FavoritesApod;
+			sourceTree = "<group>";
+		};
+		45F27D782D4BF3440045747A /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		45F27D792D4BF3500045747A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		45F27D7A2D4BF3600045747A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				45F27D7E2D4BF5250045747A /* ApodView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		45F27D7C2D4BF36E0045747A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				45F27D802D4BFBB80045747A /* ApodViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		45F27D7D2D4BF37A0045747A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				45F27D622D4BF2D50045747A /* ApodViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		45F27D822D4C10B80045747A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				45F27D832D4C10F00045747A /* UIFont+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		45F27D852D4C280D0045747A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				45F27D952D4C288D0045747A /* Roboto */,
+				45F27D942D4C28840045747A /* Futura */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		45F27D942D4C28840045747A /* Futura */ = {
+			isa = PBXGroup;
+			children = (
+				45F27D862D4C281A0045747A /* FuturaCyrillicBold.ttf */,
+				45F27D8B2D4C281A0045747A /* FuturaCyrillicLight.ttf */,
+				45F27D8C2D4C281A0045747A /* FuturaCyrillicMedium.ttf */,
+			);
+			path = Futura;
+			sourceTree = "<group>";
+		};
+		45F27D952D4C288D0045747A /* Roboto */ = {
+			isa = PBXGroup;
+			children = (
+				45F27D962D4C28A30045747A /* Roboto-Bold.ttf */,
+				45F27D972D4C28A30045747A /* Roboto-Light.ttf */,
+				45F27D982D4C28A30045747A /* Roboto-Medium.ttf */,
+			);
+			path = Roboto;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,9 +310,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				45F27CEE2D4BB5220045747A /* apod-app */,
 			);
 			name = "apod-app";
 			packageProductDependencies = (
@@ -143,9 +331,6 @@
 			dependencies = (
 				45F27D042D4BB5240045747A /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				45F27D052D4BB5240045747A /* apod-appTests */,
-			);
 			name = "apod-appTests";
 			packageProductDependencies = (
 			);
@@ -165,9 +350,6 @@
 			);
 			dependencies = (
 				45F27D0E2D4BB5240045747A /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				45F27D0F2D4BB5240045747A /* apod-appUITests */,
 			);
 			name = "apod-appUITests";
 			packageProductDependencies = (
@@ -225,6 +407,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45F27D642D4BF2D50045747A /* Assets.xcassets in Resources */,
+				45F27D8D2D4C281A0045747A /* FuturaCyrillicLight.ttf in Resources */,
+				45F27D992D4C28A30045747A /* Roboto-Bold.ttf in Resources */,
+				45F27D9A2D4C28A30045747A /* Roboto-Light.ttf in Resources */,
+				45F27D9B2D4C28A30045747A /* Roboto-Medium.ttf in Resources */,
+				45F27D902D4C281A0045747A /* FuturaCyrillicMedium.ttf in Resources */,
+				45F27D912D4C281A0045747A /* FuturaCyrillicBold.ttf in Resources */,
+				45F27D662D4BF2D50045747A /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +439,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45F27D842D4C10F00045747A /* UIFont+Ext.swift in Sources */,
+				452D7F912D4C6A0200584A75 /* FavoritesApodTableViewCell.swift in Sources */,
+				45F27D7F2D4BF5250045747A /* ApodView.swift in Sources */,
+				45F27D672D4BF2D50045747A /* AppDelegate.swift in Sources */,
+				45F27D812D4BFBB80045747A /* ApodViewModel.swift in Sources */,
+				45F27D682D4BF2D50045747A /* SceneDelegate.swift in Sources */,
+				45F27D692D4BF2D50045747A /* ApodViewController.swift in Sources */,
+				452D7F8F2D4C660700584A75 /* FavoritesApodViewController.swift in Sources */,
+				452D7F8D2D4C65C900584A75 /* FavoritesApodView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +455,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45F27D6C2D4BF2DB0045747A /* apod_appTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +463,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45F27D702D4BF2DE0045747A /* apod_appUITests.swift in Sources */,
+				45F27D712D4BF2DE0045747A /* apod_appUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +483,17 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		45F27D602D4BF2D50045747A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45F27D5F2D4BF2D50045747A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		45F27D162D4BB5240045747A /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -292,9 +505,10 @@
 				DEVELOPMENT_TEAM = CZM8PU3P9W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "apod-app/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Apod;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -324,9 +538,10 @@
 				DEVELOPMENT_TEAM = CZM8PU3P9W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "apod-app/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Apod;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
