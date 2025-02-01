@@ -59,12 +59,24 @@ extension ApodViewController: ApodViewControllerLogic {
     }
 }
 
-extension ApodViewController: ApodButtonsViewDelegate {
-    func apodViewDidTapPrevious() {
+extension ApodViewController: ApodViewDelegate {
+    func apodViewChangeDatePressed() {
+        let viewController = ApodDateBottomSheetViewController()
+        viewController.sheetPresentationController?.detents = [.medium()]
+        viewController.sheetPresentationController?.prefersGrabberVisible = true
+        
+        present(viewController, animated: true)
+    }
+    
+    func apodViewPreviousPressed() {
         interactor.requestPreviousApod()
     }
     
-    func apodViewDidTapNext() {
+    func apodViewNextPressed() {
         interactor.requestNextApod()
+    }
+    
+    func apodViewDateValueChanged(date: Date) {
+        interactor.requestApod(date: date)
     }
 }

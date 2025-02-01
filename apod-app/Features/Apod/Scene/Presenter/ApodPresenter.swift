@@ -5,6 +5,8 @@
 //  Created by Geovane Lima dos Santos on 31/01/25.
 //
 
+import Foundation
+
 protocol ApodPresenterLogic {
     func responseApod(apod: Apod)
     func responseError()
@@ -18,7 +20,8 @@ final class ApodPresenter: ApodPresenterLogic {
             mediaURL: apod.hdurl,
             title: apod.title,
             description: apod.explanation,
-            date: apod.date.toFormattedDate
+            date: apod.date.toDate,
+            isHiddenNextButton: apod.date.toDate == Date()
         )
         
         display?.displayApod(viewModel: viewModel)

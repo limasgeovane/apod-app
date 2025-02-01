@@ -11,5 +11,6 @@ struct ApodViewModel {
     var mediaURL: URL
     var title: String
     var description: String
-    var date: String
+    var date: Date
+    var isHiddenNextButton: Bool
 }

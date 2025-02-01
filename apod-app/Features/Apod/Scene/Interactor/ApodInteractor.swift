@@ -9,6 +9,7 @@ import Foundation
 
 protocol ApodInteractorLogic {
     func requestApod()
+    func requestApod(date: Date)
     func requestPreviousApod()
     func requestNextApod()
 }
@@ -26,7 +27,7 @@ final class ApodInteractor: ApodInteractorLogic {
     
     func requestApod() {
         repository.fetchApod(
-            date: currentApodDate?.formattedString ?? Date().formattedString
+            date: currentApodDate?.toString ?? Date().toString
         ) { [weak self] result in
             switch result {
             case .success(let apod):
@@ -35,6 +36,11 @@ final class ApodInteractor: ApodInteractorLogic {
                 self?.presenter.responseError()
             }
         }
+    }
+    
+    func requestApod(date: Date) {
+        currentApodDate = date
+        requestApod()
     }
     
     func requestPreviousApod() {

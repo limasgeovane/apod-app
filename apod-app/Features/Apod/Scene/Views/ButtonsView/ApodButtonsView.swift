@@ -8,11 +8,17 @@
 import UIKit
 
 protocol ApodButtonsViewDelegate: AnyObject {
-    func apodViewDidTapPrevious()
-    func apodViewDidTapNext()
+    func apodButtonsViewPreviousPressed()
+    func apodButtonsViewViewNextPressed()
 }
 
-class ApodButtonsView: UIView {
+final class ApodButtonsView: UIView {
+    var isHiddenNextButton: Bool = false {
+        didSet {
+            nextButton.isHidden = isHiddenNextButton
+        }
+    }
+    
     private lazy var previousButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(previousButtonPressed), for: .touchUpInside)
@@ -24,7 +30,7 @@ class ApodButtonsView: UIView {
         return button
     }()
     
-    lazy var nextButton: UIButton = {
+    private lazy var nextButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
         button.setTitle("Next apod", for: .normal)
@@ -32,6 +38,7 @@ class ApodButtonsView: UIView {
         button.titleLabel?.font = .primary
         button.backgroundColor = .systemBlue
         button.layer.cornerRadius = 22
+        button.isHidden = true
         return button
     }()
     
@@ -71,10 +78,10 @@ class ApodButtonsView: UIView {
     }
     
     @objc private func previousButtonPressed() {
-        delegate?.apodViewDidTapPrevious()
+        delegate?.apodButtonsViewPreviousPressed()
     }
     
     @objc private func nextButtonPressed() {
-        delegate?.apodViewDidTapNext()
+        delegate?.apodButtonsViewViewNextPressed()
     }
 }
