@@ -22,7 +22,7 @@ final class ApodPresenter: ApodPresenterLogic {
             title: apod.title,
             description: apod.explanation,
             date: apod.date.toDate,
-            isHiddenNextButton: apod.date.toDate == Date()
+            isHiddenNextButton: Date().isEqualTo(apod.date.toDate)
         )
         
         display?.displayApod(viewModel: viewModel)

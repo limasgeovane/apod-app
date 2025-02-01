@@ -33,6 +33,7 @@
 		45B5005F2D4DDED000EE5939 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5005E2D4DDEC900EE5939 /* MainTabBarController.swift */; };
 		45B500622D4DDFC400EE5939 /* FavoritesApodFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B500612D4DDFBC00EE5939 /* FavoritesApodFactory.swift */; };
 		45DB93722D4E067B00D2AED8 /* URL+YoutubeVideoID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB93712D4E066C00D2AED8 /* URL+YoutubeVideoID.swift */; };
+		45DB93742D4E710400D2AED8 /* Date+IsEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB93732D4E70FA00D2AED8 /* Date+IsEqual.swift */; };
 		45F27D642D4BF2D50045747A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45F27D5D2D4BF2D50045747A /* Assets.xcassets */; };
 		45F27D662D4BF2D50045747A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45F27D602D4BF2D50045747A /* LaunchScreen.storyboard */; };
 		45F27D672D4BF2D50045747A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F27D5C2D4BF2D50045747A /* AppDelegate.swift */; };
@@ -101,6 +102,7 @@
 		45B5005E2D4DDEC900EE5939 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		45B500612D4DDFBC00EE5939 /* FavoritesApodFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesApodFactory.swift; sourceTree = "<group>"; };
 		45DB93712D4E066C00D2AED8 /* URL+YoutubeVideoID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+YoutubeVideoID.swift"; sourceTree = "<group>"; };
+		45DB93732D4E70FA00D2AED8 /* Date+IsEqual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+IsEqual.swift"; sourceTree = "<group>"; };
 		45F27CEC2D4BB5220045747A /* apod-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "apod-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F27D022D4BB5240045747A /* apod-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "apod-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F27D0C2D4BB5240045747A /* apod-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "apod-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -449,6 +451,7 @@
 		45F27D822D4C10B80045747A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				45DB93732D4E70FA00D2AED8 /* Date+IsEqual.swift */,
 				45DB93712D4E066C00D2AED8 /* URL+YoutubeVideoID.swift */,
 				45B5005B2D4DD17B00EE5939 /* Date+ToString.swift */,
 				45B500452D4C9B3900EE5939 /* String+ToDate.swift */,
@@ -741,6 +744,7 @@
 				45B500342D4C91F100EE5939 /* NetworkParameterEncoding.swift in Sources */,
 				45F27D672D4BF2D50045747A /* AppDelegate.swift in Sources */,
 				45B5003E2D4C954E00EE5939 /* ApodRepository.swift in Sources */,
+				45DB93742D4E710400D2AED8 /* Date+IsEqual.swift in Sources */,
 				45F27D812D4BFBB80045747A /* ApodViewModel.swift in Sources */,
 				45B5004D2D4CAB0000EE5939 /* ApodMediaProgressView.swift in Sources */,
 				45B500402D4C979A00EE5939 /* ApodInteractor.swift in Sources */,
