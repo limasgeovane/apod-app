@@ -117,7 +117,7 @@ class ApodView: UIView {
 
 extension ApodView: ApodViewLogic {
     func setupView(viewModel: ApodViewModel) {
-        mediaView.setup(url: viewModel.mediaURL, type: .image)
+        mediaView.setup(url: viewModel.mediaURL, type: viewModel.mediaType)
         titleLabel.text = viewModel.title
         descriptionTextView.text = viewModel.description
         datePicker.date = viewModel.date

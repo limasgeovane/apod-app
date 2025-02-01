@@ -8,6 +8,7 @@ target 'apod-app' do
   # Pods for apod-app
   pod 'Alamofire'
   pod 'Kingfisher'
+  pod 'youtube-ios-player-helper'
 
   target 'apod-appTests' do
     inherit! :search_paths

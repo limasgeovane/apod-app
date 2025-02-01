@@ -7,22 +7,30 @@
 
 import UIKit
 import Kingfisher
+import youtube_ios_player_helper
 
 final class ApodMediaView: UIView {
     private let mediaProgressView = ApodMediaProgressView()
     
-    private lazy var imageView: UIImageView = {
+    private let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         imageView.isHidden = true
         return imageView
     }()
     
+    private let indicatorView = UIActivityIndicatorView()
+    
+    private let videoPlayerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemBackground
+        view.isHidden = true
+        return view
+    }()
+    
     private lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [mediaProgressView, imageView])
+        let stackView = UIStackView(arrangedSubviews: [mediaProgressView, imageView, indicatorView, videoPlayerView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .horizontal
         return stackView
     }()
     
@@ -37,9 +45,24 @@ final class ApodMediaView: UIView {
     }
     
     func setup(url: URL, type: Apod.MediaType) {
-        imageView.isHidden = true
-        mediaProgressView.isHidden = false
-        
+        switch type {
+        case .image:
+            imageView.isHidden = true
+            mediaProgressView.isHidden = false
+            videoPlayerView.isHidden = true
+            indicatorView.isHidden = true
+            loadImage(url: url)
+        case .video:
+            imageView.isHidden = true
+            mediaProgressView.isHidden = true
+            videoPlayerView.isHidden = true
+            indicatorView.isHidden = false
+            indicatorView.startAnimating()
+            loadVideo(url: url)
+        }
+    }
+    
+    private func loadImage(url: URL) {
         imageView.kf.setImage(with: url) { [weak self] receivedSize, totalSize in
             let progress = Float(receivedSize) / Float(totalSize)
             self?.mediaProgressView.progress = progress
@@ -56,6 +79,16 @@ final class ApodMediaView: UIView {
         }
     }
     
+    private func loadVideo(url: URL) {
+        if let videoID = url.youtubeVideoID {
+            let youtubePlayerView = YTPlayerView(frame: bounds)
+            youtubePlayerView.delegate = self
+            videoPlayerView.addSubview(youtubePlayerView)
+            
+            youtubePlayerView.load(withVideoId: videoID)
+        }
+    }
+    
     private func setupViewHierarchy() {
         addSubview(stackView)
     }
@@ -68,5 +101,14 @@ final class ApodMediaView: UIView {
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
             stackView.heightAnchor.constraint(equalToConstant: 300)
         ])
+    }
+}
+
+extension ApodMediaView: YTPlayerViewDelegate {
+    func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
+        indicatorView.isHidden = true
+        indicatorView.stopAnimating()
+        videoPlayerView.isHidden = false
+        playerView.playVideo()
     }
 }

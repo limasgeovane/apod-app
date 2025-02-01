@@ -17,7 +17,8 @@ final class ApodPresenter: ApodPresenterLogic {
     
     func responseApod(apod: Apod) {
         let viewModel = ApodViewModel(
-            mediaURL: apod.hdurl,
+            mediaURL: apod.hdurl ?? apod.url,
+            mediaType: apod.mediaType,
             title: apod.title,
             description: apod.explanation,
             date: apod.date.toDate,
