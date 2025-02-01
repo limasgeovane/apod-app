@@ -28,8 +28,8 @@ final class ApodMediaView: UIView {
     
     init() {
         super.init(frame: .zero)
-        setupUI()
-        setupUIConstraints()
+        setupViewHierarchy()
+        setupLayout()
     }
     
     required init?(coder: NSCoder) {
@@ -56,11 +56,11 @@ final class ApodMediaView: UIView {
         }
     }
     
-    private func setupUI() {
+    private func setupViewHierarchy() {
         addSubview(stackView)
     }
     
-    private func setupUIConstraints() {
+    private func setupLayout() {
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: topAnchor),
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor),

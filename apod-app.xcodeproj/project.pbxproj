@@ -30,6 +30,8 @@
 		45B5004D2D4CAB0000EE5939 /* ApodMediaProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5004C2D4CAAF300EE5939 /* ApodMediaProgressView.swift */; };
 		45B5004F2D4D4A9E00EE5939 /* ApodButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5004E2D4D4A9E00EE5939 /* ApodButtonsView.swift */; };
 		45B5005C2D4DD17F00EE5939 /* Date+ToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5005B2D4DD17B00EE5939 /* Date+ToString.swift */; };
+		45B5005F2D4DDED000EE5939 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5005E2D4DDEC900EE5939 /* MainTabBarController.swift */; };
+		45B500622D4DDFC400EE5939 /* FavoritesApodFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B500612D4DDFBC00EE5939 /* FavoritesApodFactory.swift */; };
 		45F27D642D4BF2D50045747A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45F27D5D2D4BF2D50045747A /* Assets.xcassets */; };
 		45F27D662D4BF2D50045747A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45F27D602D4BF2D50045747A /* LaunchScreen.storyboard */; };
 		45F27D672D4BF2D50045747A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F27D5C2D4BF2D50045747A /* AppDelegate.swift */; };
@@ -95,6 +97,8 @@
 		45B5004C2D4CAAF300EE5939 /* ApodMediaProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodMediaProgressView.swift; sourceTree = "<group>"; };
 		45B5004E2D4D4A9E00EE5939 /* ApodButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodButtonsView.swift; sourceTree = "<group>"; };
 		45B5005B2D4DD17B00EE5939 /* Date+ToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ToString.swift"; sourceTree = "<group>"; };
+		45B5005E2D4DDEC900EE5939 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		45B500612D4DDFBC00EE5939 /* FavoritesApodFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesApodFactory.swift; sourceTree = "<group>"; };
 		45F27CEC2D4BB5220045747A /* apod-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "apod-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F27D022D4BB5240045747A /* apod-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "apod-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F27D0C2D4BB5240045747A /* apod-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "apod-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -272,6 +276,22 @@
 			path = ButtonsView;
 			sourceTree = "<group>";
 		};
+		45B5005D2D4DDEBD00EE5939 /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				45B5005E2D4DDEC900EE5939 /* MainTabBarController.swift */,
+			);
+			path = MainTabBar;
+			sourceTree = "<group>";
+		};
+		45B500602D4DDFB400EE5939 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				45B500612D4DDFBC00EE5939 /* FavoritesApodFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
 		45F27CE32D4BB5220045747A = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +345,7 @@
 		45F27D722D4BF2E30045747A /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				45B5005D2D4DDEBD00EE5939 /* MainTabBar */,
 				45F27D732D4BF2F70045747A /* Apod */,
 				45F27D772D4BF32B0045747A /* FavoritesApod */,
 			);
@@ -374,6 +395,7 @@
 		45F27D772D4BF32B0045747A /* FavoritesApod */ = {
 			isa = PBXGroup;
 			children = (
+				45B500602D4DDFB400EE5939 /* Factory */,
 				452D7F8A2D4C655300584A75 /* ViewController */,
 				452D7F8B2D4C655D00584A75 /* Views */,
 			);
@@ -706,6 +728,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45B5005F2D4DDED000EE5939 /* MainTabBarController.swift in Sources */,
 				45F27D842D4C10F00045747A /* UIFont+Ext.swift in Sources */,
 				45B500322D4C91E000EE5939 /* NetworkMethod.swift in Sources */,
 				45B500362D4C91FE00EE5939 /* NetworkRequestConfigurator.swift in Sources */,
@@ -731,6 +754,7 @@
 				45B500462D4C9B4100EE5939 /* String+ToDate.swift in Sources */,
 				45B5003A2D4C925600EE5939 /* AlamofireNetworkRequest.swift in Sources */,
 				452D7F8F2D4C660700584A75 /* FavoritesApodViewController.swift in Sources */,
+				45B500622D4DDFC400EE5939 /* FavoritesApodFactory.swift in Sources */,
 				452D7F8D2D4C65C900584A75 /* FavoritesApodView.swift in Sources */,
 				45B500442D4C996B00EE5939 /* ApodPresenter.swift in Sources */,
 				45B500492D4C9F4A00EE5939 /* ApodFactory.swift in Sources */,

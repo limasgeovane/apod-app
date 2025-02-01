@@ -32,20 +32,20 @@ final class ApodMediaProgressView: UIView {
     
     init() {
         super.init(frame: .zero)
-        setupUI()
-        setupUIConstraints()
+        setupViewHierarchy()
+        setupLayout()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupUI() {
+    private func setupViewHierarchy() {
         addSubview(progressView)
         addSubview(loadingLabel)
     }
     
-    private func setupUIConstraints() {
+    private func setupLayout() {
         NSLayoutConstraint.activate([
             progressView.centerYAnchor.constraint(equalTo: centerYAnchor),
             progressView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 80),

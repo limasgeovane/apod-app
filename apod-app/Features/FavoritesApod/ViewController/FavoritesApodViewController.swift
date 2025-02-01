@@ -22,11 +22,4 @@ class FavoritesApodViewController: UIViewController {
     override func loadView() {
         view = contentView
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        title = "Favorites"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.appName]
-    }
 }

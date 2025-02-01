@@ -9,7 +9,6 @@ import UIKit
 import Kingfisher
 
 protocol ApodViewDelegate: AnyObject {
-    func apodViewChangeDatePressed()
     func apodViewPreviousPressed()
     func apodViewNextPressed()
     func apodViewDateValueChanged(date: Date)
@@ -78,21 +77,25 @@ class ApodView: UIView {
     
     init() {
         super.init(frame: .zero)
-        setupUI()
-        setupUIConstraints()
+        setupViewHierarchy()
+        setupViewAttributes()
+        setupLayout()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupUI() {
-        backgroundColor = .systemBackground
+    private func setupViewHierarchy() {
         addSubview(apodStackView)
         addSubview(apodButtonsView)
     }
     
-    private func setupUIConstraints() {
+    private func setupViewAttributes() {
+        backgroundColor = .systemBackground
+    }
+    
+    private func setupLayout() {
         NSLayoutConstraint.activate([
             apodStackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
             apodStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
@@ -103,10 +106,6 @@ class ApodView: UIView {
             apodButtonsView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             apodButtonsView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16),
         ])
-    }
-    
-    @objc private func changeDateButtonPressed() {
-        delegate?.apodViewChangeDatePressed()
     }
     
     @objc func datePickerValueChanged(_ sender: UIDatePicker) {

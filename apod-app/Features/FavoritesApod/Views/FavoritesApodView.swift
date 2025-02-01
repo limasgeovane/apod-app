@@ -22,20 +22,24 @@ class FavoritesApodView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupUI()
+        setupViewHierarchy()
+        setupViewAttributes()
+        setupLayout()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupUI() {
-        backgroundColor = .systemBackground
+    private func setupViewHierarchy() {
         addSubview(favoritesApodTableView)
-        setupUIConstraints()
     }
     
-    private func setupUIConstraints() {
+    private func setupViewAttributes() {
+        backgroundColor = .systemBackground
+    }
+    
+    private func setupLayout() {
         NSLayoutConstraint.activate([
             favoritesApodTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
             favoritesApodTableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),

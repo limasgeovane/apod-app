@@ -12,14 +12,12 @@ class FavoritesApodTableViewCell: UITableViewCell {
     
     private let favoriteApodButton: UIButton = {
         let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "star.fill"), for: .normal)
         return button
     }()
     
     private let favoriteApodDateLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "2025-01-30"
         label.font = .primary
         return label
@@ -27,7 +25,6 @@ class FavoritesApodTableViewCell: UITableViewCell {
     
     private let favoriteApodTitleLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .secondary
         label.text = "Hydrogen Clouds of M33"
         return label
@@ -35,44 +32,46 @@ class FavoritesApodTableViewCell: UITableViewCell {
     
     private lazy var favoriteStackViewVertical: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [favoriteApodDateLabel, favoriteApodTitleLabel])
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         return stackView
     }()
     
-    private lazy var favoriteStackViewHorizontal: UIStackView = {
+    private lazy var favoriteStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [favoriteApodButton, favoriteStackViewVertical])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
-        //stackView.spacing = 8
         stackView.alignment = .center
         return stackView
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupUI()
+        setupViewHierarchy()
+        setupViewAttributes()
+        setupLayout()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupUI() {
-        backgroundColor = .clear
-        selectionStyle = .none
-        addSubview(favoriteStackViewHorizontal)
-        setupUIConstraints()
+    private func setupViewHierarchy() {
+        addSubview(favoriteStackView)
     }
     
-    private func setupUIConstraints() {
+    private func setupViewAttributes() {
+        backgroundColor = .clear
+        selectionStyle = .none
+    }
+    
+    private func setupLayout() {
         NSLayoutConstraint.activate([
             favoriteApodButton.widthAnchor.constraint(equalToConstant: 64),
         
-            favoriteStackViewHorizontal.topAnchor.constraint(equalTo: topAnchor, constant: 8),
-            favoriteStackViewHorizontal.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
-            favoriteStackViewHorizontal.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
-            favoriteStackViewHorizontal.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8)
+            favoriteStackView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
+            favoriteStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            favoriteStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
+            favoriteStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8)
         ])
     }
 }

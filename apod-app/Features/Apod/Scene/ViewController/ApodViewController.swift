@@ -38,7 +38,6 @@ class ApodViewController: UIViewController {
     }
     
     private func setupNavigation() {
-        title = "Apod"
         let favoriteButton = UIBarButtonItem(
             image: UIImage(systemName: "star"),
             style: .plain,
@@ -60,14 +59,6 @@ extension ApodViewController: ApodViewControllerLogic {
 }
 
 extension ApodViewController: ApodViewDelegate {
-    func apodViewChangeDatePressed() {
-        let viewController = ApodDateBottomSheetViewController()
-        viewController.sheetPresentationController?.detents = [.medium()]
-        viewController.sheetPresentationController?.prefersGrabberVisible = true
-        
-        present(viewController, animated: true)
-    }
-    
     func apodViewPreviousPressed() {
         interactor.requestPreviousApod()
     }

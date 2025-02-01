@@ -55,19 +55,19 @@ final class ApodButtonsView: UIView {
     
     init() {
         super.init(frame: .zero)
-        setupUI()
-        setupUIConstraints()
+        setupViewHierarchy()
+        setupLayout()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupUI() {
+    private func setupViewHierarchy() {
         addSubview(stackView)
     }
     
-    private func setupUIConstraints() {
+    private func setupLayout() {
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: topAnchor),
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
