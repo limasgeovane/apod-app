@@ -34,7 +34,7 @@ class ApodViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigation()
-        interactor.requestApod()
+        interactor.requestApod(date: Date())
     }
     
     private func setupNavigation() {

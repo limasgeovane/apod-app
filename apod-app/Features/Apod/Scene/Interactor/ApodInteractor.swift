@@ -8,7 +8,6 @@
 import Foundation
 
 protocol ApodInteractorLogic {
-    func requestApod()
     func requestApod(date: Date)
     func requestFavoriteApod()
     func requestUnfavoriteApod()
@@ -17,7 +16,6 @@ protocol ApodInteractorLogic {
 }
 
 final class ApodInteractor: ApodInteractorLogic {
-    private var currentApodDate: Date?
     private var currentApod: Apod?
     
     private let favoriteApodRepository: FavoritesApodRepositoryLogic
@@ -28,29 +26,15 @@ final class ApodInteractor: ApodInteractorLogic {
         self.repository = repository
         self.favoriteApodRepository = favoriteApodRepository
         self.presenter = presenter
+        setupNotifications()
     }
     
-    func requestApod() {
-        repository.fetchApod(
-            date: currentApodDate?.toString ?? Date().toString
-        ) { [weak self] result in
-            guard let self else { return }
-            switch result {
-            case .success(let apod):
-                self.currentApod = apod
-                self.presenter.responseApod(
-                    apod: apod,
-                    isFavorite: self.favoriteApodRepository.isApodFavorite(date: apod.date)
-                )
-            case .failure:
-                self.presenter.responseError()
-            }
-        }
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     func requestApod(date: Date) {
-        currentApodDate = date
-        requestApod()
+        fetchApod(date: date)
     }
     
     func requestFavoriteApod() {
@@ -68,14 +52,50 @@ final class ApodInteractor: ApodInteractorLogic {
     }
     
     func requestPreviousApod() {
-        let previousDay = Calendar.current.date(byAdding: .day, value: -1, to: currentApodDate ?? Date())
-        currentApodDate = previousDay ?? Date()
-        requestApod()
+        let previousDate = Calendar.current.date(
+            byAdding: .day, value: -1, to: currentApod?.date.toDate ?? Date()
+        )
+        fetchApod(date: previousDate ?? Date())
     }
     
     func requestNextApod() {
-        let nextDay = Calendar.current.date(byAdding: .day, value: 1, to: currentApodDate ?? Date())
-        currentApodDate = nextDay ?? Date()
-        requestApod()
+        let nextDate = Calendar.current.date(
+            byAdding: .day, value: 1, to: currentApod?.date.toDate ?? Date()
+        )
+        fetchApod(date: nextDate ?? Date())
+    }
+    
+    private func fetchApod(date: Date) {
+        repository.fetchApod(
+            date: date.toString
+        ) { [weak self] result in
+            guard let self else { return }
+            switch result {
+            case .success(let apod):
+                self.currentApod = apod
+                self.presenter.responseApod(
+                    apod: apod,
+                    isFavorite: self.favoriteApodRepository.isApodFavorite(date: apod.date)
+                )
+            case .failure:
+                self.presenter.responseError()
+            }
+        }
+    }
+    
+    private func setupNotifications() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(favoriteApodSelected),
+            name: .favoriteApodSelected,
+            object: nil
+        )
+    }
+    
+    @objc private func favoriteApodSelected(notification: Notification) {
+        if let userInfo = notification.userInfo,
+           let favoriteApod = userInfo["apodDate"] as? String {
+            requestApod(date: favoriteApod.toDate)
+        }
     }
 }

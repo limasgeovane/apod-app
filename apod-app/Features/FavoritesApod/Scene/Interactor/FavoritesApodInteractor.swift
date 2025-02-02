@@ -9,6 +9,7 @@ import Foundation
 
 protocol FavoritesApodInteractorLogic {
     func requestFavoritesApod()
+    func requestSelectFavoriteApod(indexPath: IndexPath)
 }
 
 class FavoritesApodInteractor: FavoritesApodInteractorLogic {
@@ -23,5 +24,15 @@ class FavoritesApodInteractor: FavoritesApodInteractorLogic {
     func requestFavoritesApod() {
         let favoritesApod = repository.getFavorites()
         presenter.responseFavoritesApod(favoritesApod: favoritesApod)
+    }
+    
+    func requestSelectFavoriteApod(indexPath: IndexPath) {
+        let apod = repository.getFavorites()[indexPath.row]
+        
+        NotificationCenter.default.post(
+            name: .favoriteApodSelected,
+            object: nil ,
+            userInfo: ["apodDate": apod.date]
+        )
     }
 }

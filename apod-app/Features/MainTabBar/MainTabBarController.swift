@@ -20,8 +20,13 @@ final class MainTabBarController: UITabBarController {
         setupTitles()
         setupTabBar()
         setupViewControllers()
+        setupNotifications()
     }
-
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     private func setupTitles() {
         apodViewController.title = "Apod"
         favoritesApodViewController.title = "Favorites"
@@ -46,5 +51,18 @@ final class MainTabBarController: UITabBarController {
     
     private func setupViewControllers() {
         viewControllers = [apodNavigationController, favoritesApodNavigationController]
+    }
+    
+    private func setupNotifications() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(favoriteApodSelected),
+            name: .favoriteApodSelected,
+            object: nil
+        )
+    }
+    
+    @objc private func favoriteApodSelected(notification: Notification) {
+        selectedIndex = 0
     }
 }

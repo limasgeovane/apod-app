@@ -1,5 +1,5 @@
 //
-//  UIFont+Ext.swift
+//  UIFonts.swift
 //  apod-app
 //
 //  Created by Geovane Lima dos Santos on 30/01/25.

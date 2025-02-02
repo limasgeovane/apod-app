@@ -7,11 +7,18 @@
 
 import UIKit
 
+protocol FavoritesApodViewDelegate: AnyObject {
+    func favoritesApodViewDidApodSelected(indexPath: IndexPath)
+}
+
 protocol FavoritesApodViewLogic: UIView, AnyObject {
+    var delegate: FavoritesApodViewDelegate? { get set }
     var favoritesApod: [FavoritesApodViewModel] { get set }
 }
 
 class FavoritesApodView: UIView, FavoritesApodViewLogic {
+    weak var delegate: FavoritesApodViewDelegate?
+    
     var favoritesApod: [FavoritesApodViewModel] = [] {
         didSet {
             favoritesApodTableView.reloadData()
@@ -23,7 +30,6 @@ class FavoritesApodView: UIView, FavoritesApodViewLogic {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(FavoritesApodTableViewCell.self, forCellReuseIdentifier: FavoritesApodTableViewCell.identifier)
         tableView.backgroundColor = .systemBackground
-        tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         tableView.delegate = self
         tableView.dataSource = self
@@ -77,5 +83,9 @@ extension FavoritesApodView: UITableViewDataSource {
         let favoriteApod = favoritesApod[indexPath.row]
         cell.configureCell(viewModel: favoriteApod)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.favoritesApodViewDidApodSelected(indexPath: indexPath)
     }
 }

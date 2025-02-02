@@ -10,14 +10,6 @@ import UIKit
 class FavoritesApodTableViewCell: UITableViewCell {
     static let identifier: String = "FavoritesApodTableViewCell"
     
-    private let favoriteApodButton: UIButton = {
-        let button = UIButton()
-        let image = UIImage.starFill.withRenderingMode(.alwaysTemplate)
-        button.setImage(image, for: .normal)
-        button.tintColor = .systemBlue
-        return button
-    }()
-    
     private let favoriteApodDateLabel: UILabel = {
         let label = UILabel()
         label.font = .primary
@@ -30,17 +22,10 @@ class FavoritesApodTableViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var favoriteStackViewVertical: UIStackView = {
+    private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [favoriteApodDateLabel, favoriteApodTitleLabel])
-        stackView.axis = .vertical
-        return stackView
-    }()
-    
-    private lazy var favoriteStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [favoriteApodButton, favoriteStackViewVertical])
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .horizontal
-        stackView.alignment = .center
+        stackView.axis = .vertical
         return stackView
     }()
     
@@ -56,7 +41,7 @@ class FavoritesApodTableViewCell: UITableViewCell {
     }
     
     private func setupViewHierarchy() {
-        addSubview(favoriteStackView)
+        addSubview(stackView)
     }
     
     private func setupViewAttributes() {
@@ -66,12 +51,10 @@ class FavoritesApodTableViewCell: UITableViewCell {
     
     private func setupLayout() {
         NSLayoutConstraint.activate([
-            favoriteApodButton.widthAnchor.constraint(equalToConstant: 64),
-        
-            favoriteStackView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
-            favoriteStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
-            favoriteStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
-            favoriteStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8)
+            stackView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8)
         ])
     }
     

@@ -27,6 +27,7 @@ class FavoritesApodViewController: UIViewController {
     
     override func loadView() {
         view = contentView
+        contentView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,5 +39,11 @@ class FavoritesApodViewController: UIViewController {
 extension FavoritesApodViewController: FavoritesApodViewControllerLogic {
     func displayFavoritesApod(viewModel: [FavoritesApodViewModel]) {
         contentView.favoritesApod = viewModel
+    }
+}
+
+extension FavoritesApodViewController: FavoritesApodViewDelegate {
+    func favoritesApodViewDidApodSelected(indexPath: IndexPath) {
+        interactor.requestSelectFavoriteApod(indexPath: indexPath)
     }
 }

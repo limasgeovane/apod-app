@@ -39,6 +39,7 @@
 		45DB93822D4F130800D2AED8 /* FavoritesApodInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB93812D4F130800D2AED8 /* FavoritesApodInteractor.swift */; };
 		45DB93842D4F13A500D2AED8 /* FavoritesApodPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB93832D4F13A500D2AED8 /* FavoritesApodPresenter.swift */; };
 		45DB93872D4F148C00D2AED8 /* FavoritesApodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB93862D4F148C00D2AED8 /* FavoritesApodViewModel.swift */; };
+		45DB93892D4FD66100D2AED8 /* NotificationsNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB93882D4FD66100D2AED8 /* NotificationsNames.swift */; };
 		45F27D642D4BF2D50045747A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45F27D5D2D4BF2D50045747A /* Assets.xcassets */; };
 		45F27D662D4BF2D50045747A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45F27D602D4BF2D50045747A /* LaunchScreen.storyboard */; };
 		45F27D672D4BF2D50045747A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F27D5C2D4BF2D50045747A /* AppDelegate.swift */; };
@@ -49,7 +50,7 @@
 		45F27D712D4BF2DE0045747A /* apod_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F27D6E2D4BF2DE0045747A /* apod_appUITestsLaunchTests.swift */; };
 		45F27D7F2D4BF5250045747A /* ApodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F27D7E2D4BF5250045747A /* ApodView.swift */; };
 		45F27D812D4BFBB80045747A /* ApodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F27D802D4BFBB80045747A /* ApodViewModel.swift */; };
-		45F27D842D4C10F00045747A /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F27D832D4C10F00045747A /* UIFont+Ext.swift */; };
+		45F27D842D4C10F00045747A /* UIFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F27D832D4C10F00045747A /* UIFonts.swift */; };
 		45F27D8D2D4C281A0045747A /* FuturaCyrillicLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45F27D8B2D4C281A0045747A /* FuturaCyrillicLight.ttf */; };
 		45F27D902D4C281A0045747A /* FuturaCyrillicMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45F27D8C2D4C281A0045747A /* FuturaCyrillicMedium.ttf */; };
 		45F27D912D4C281A0045747A /* FuturaCyrillicBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45F27D862D4C281A0045747A /* FuturaCyrillicBold.ttf */; };
@@ -113,6 +114,7 @@
 		45DB93812D4F130800D2AED8 /* FavoritesApodInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesApodInteractor.swift; sourceTree = "<group>"; };
 		45DB93832D4F13A500D2AED8 /* FavoritesApodPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesApodPresenter.swift; sourceTree = "<group>"; };
 		45DB93862D4F148C00D2AED8 /* FavoritesApodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesApodViewModel.swift; sourceTree = "<group>"; };
+		45DB93882D4FD66100D2AED8 /* NotificationsNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsNames.swift; sourceTree = "<group>"; };
 		45F27CEC2D4BB5220045747A /* apod-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "apod-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F27D022D4BB5240045747A /* apod-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "apod-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F27D0C2D4BB5240045747A /* apod-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "apod-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,7 +129,7 @@
 		45F27D6E2D4BF2DE0045747A /* apod_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apod_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		45F27D7E2D4BF5250045747A /* ApodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodView.swift; sourceTree = "<group>"; };
 		45F27D802D4BFBB80045747A /* ApodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodViewModel.swift; sourceTree = "<group>"; };
-		45F27D832D4C10F00045747A /* UIFont+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
+		45F27D832D4C10F00045747A /* UIFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFonts.swift; sourceTree = "<group>"; };
 		45F27D862D4C281A0045747A /* FuturaCyrillicBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaCyrillicBold.ttf; sourceTree = "<group>"; };
 		45F27D8B2D4C281A0045747A /* FuturaCyrillicLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaCyrillicLight.ttf; sourceTree = "<group>"; };
 		45F27D8C2D4C281A0045747A /* FuturaCyrillicMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaCyrillicMedium.ttf; sourceTree = "<group>"; };
@@ -518,7 +520,8 @@
 				45DB93712D4E066C00D2AED8 /* URL+YoutubeVideoID.swift */,
 				45B5005B2D4DD17B00EE5939 /* Date+ToString.swift */,
 				45B500452D4C9B3900EE5939 /* String+ToDate.swift */,
-				45F27D832D4C10F00045747A /* UIFont+Ext.swift */,
+				45F27D832D4C10F00045747A /* UIFonts.swift */,
+				45DB93882D4FD66100D2AED8 /* NotificationsNames.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -799,7 +802,7 @@
 			files = (
 				45DB937A2D4EEE2700D2AED8 /* FavoriteApod.swift in Sources */,
 				45B5005F2D4DDED000EE5939 /* MainTabBarController.swift in Sources */,
-				45F27D842D4C10F00045747A /* UIFont+Ext.swift in Sources */,
+				45F27D842D4C10F00045747A /* UIFonts.swift in Sources */,
 				45B500322D4C91E000EE5939 /* NetworkMethod.swift in Sources */,
 				45B500362D4C91FE00EE5939 /* NetworkRequestConfigurator.swift in Sources */,
 				45DB93722D4E067B00D2AED8 /* URL+YoutubeVideoID.swift in Sources */,
@@ -819,6 +822,7 @@
 				45B5004F2D4D4A9E00EE5939 /* ApodButtonsView.swift in Sources */,
 				45B5002E2D4C917700EE5939 /* NetworkBaseURL.swift in Sources */,
 				45B500382D4C923B00EE5939 /* NetworkRequester.swift in Sources */,
+				45DB93892D4FD66100D2AED8 /* NotificationsNames.swift in Sources */,
 				45B5005C2D4DD17F00EE5939 /* Date+ToString.swift in Sources */,
 				45B5004B2D4CA1BD00EE5939 /* ApodMediaView.swift in Sources */,
 				45F27D682D4BF2D50045747A /* SceneDelegate.swift in Sources */,
