@@ -31,7 +31,7 @@ class ApodView: UIView {
     
     private let descriptionTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Description:"
+        label.text = Strings.description
         label.font = .primary
         return label
     }()

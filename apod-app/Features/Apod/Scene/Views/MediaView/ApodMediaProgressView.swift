@@ -24,7 +24,7 @@ final class ApodMediaProgressView: UIView {
     private let loadingLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Loading..."
+        label.text = Strings.loading
         label.textAlignment = .center
         label.font = .primary
         return label

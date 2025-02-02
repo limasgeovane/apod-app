@@ -40,6 +40,8 @@
 		45DB93842D4F13A500D2AED8 /* FavoritesApodPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB93832D4F13A500D2AED8 /* FavoritesApodPresenter.swift */; };
 		45DB93872D4F148C00D2AED8 /* FavoritesApodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB93862D4F148C00D2AED8 /* FavoritesApodViewModel.swift */; };
 		45DB93892D4FD66100D2AED8 /* NotificationsNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB93882D4FD66100D2AED8 /* NotificationsNames.swift */; };
+		45DB938D2D4FFC2600D2AED8 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 45DB938C2D4FFC2600D2AED8 /* Localizable.xcstrings */; };
+		45DB938F2D4FFF9D00D2AED8 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB938E2D4FFF9800D2AED8 /* Localizable.swift */; };
 		45F27D642D4BF2D50045747A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45F27D5D2D4BF2D50045747A /* Assets.xcassets */; };
 		45F27D662D4BF2D50045747A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45F27D602D4BF2D50045747A /* LaunchScreen.storyboard */; };
 		45F27D672D4BF2D50045747A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F27D5C2D4BF2D50045747A /* AppDelegate.swift */; };
@@ -115,6 +117,8 @@
 		45DB93832D4F13A500D2AED8 /* FavoritesApodPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesApodPresenter.swift; sourceTree = "<group>"; };
 		45DB93862D4F148C00D2AED8 /* FavoritesApodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesApodViewModel.swift; sourceTree = "<group>"; };
 		45DB93882D4FD66100D2AED8 /* NotificationsNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsNames.swift; sourceTree = "<group>"; };
+		45DB938C2D4FFC2600D2AED8 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		45DB938E2D4FFF9800D2AED8 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		45F27CEC2D4BB5220045747A /* apod-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "apod-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F27D022D4BB5240045747A /* apod-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "apod-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F27D0C2D4BB5240045747A /* apod-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "apod-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,6 +222,7 @@
 		45B500262D4C902900EE5939 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				45DB938A2D4FFC0700D2AED8 /* Localizable */,
 				45F27D852D4C280D0045747A /* Fonts */,
 				45F27D5C2D4BF2D50045747A /* AppDelegate.swift */,
 				45F27D5D2D4BF2D50045747A /* Assets.xcassets */,
@@ -358,6 +363,15 @@
 				45DB93862D4F148C00D2AED8 /* FavoritesApodViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		45DB938A2D4FFC0700D2AED8 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				45DB938C2D4FFC2600D2AED8 /* Localizable.xcstrings */,
+				45DB938E2D4FFF9800D2AED8 /* Localizable.swift */,
+			);
+			path = Localizable;
 			sourceTree = "<group>";
 		};
 		45F27CE32D4BB5220045747A = {
@@ -673,6 +687,7 @@
 				45F27D902D4C281A0045747A /* FuturaCyrillicMedium.ttf in Resources */,
 				45F27D912D4C281A0045747A /* FuturaCyrillicBold.ttf in Resources */,
 				45F27D662D4BF2D50045747A /* LaunchScreen.storyboard in Resources */,
+				45DB938D2D4FFC2600D2AED8 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -837,6 +852,7 @@
 				452D7F8D2D4C65C900584A75 /* FavoritesApodView.swift in Sources */,
 				45B500442D4C996B00EE5939 /* ApodPresenter.swift in Sources */,
 				45DB93822D4F130800D2AED8 /* FavoritesApodInteractor.swift in Sources */,
+				45DB938F2D4FFF9D00D2AED8 /* Localizable.swift in Sources */,
 				45B500492D4C9F4A00EE5939 /* ApodFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1012,6 +1028,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -1068,6 +1085,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

@@ -28,8 +28,8 @@ final class MainTabBarController: UITabBarController {
     }
     
     private func setupTitles() {
-        apodViewController.title = "Apod"
-        favoritesApodViewController.title = "Favorites"
+        apodViewController.title = Strings.apod
+        favoritesApodViewController.title = Strings.favorites
     }
     
     private func setupTabBar() {
@@ -38,12 +38,12 @@ final class MainTabBarController: UITabBarController {
         tabBar.backgroundColor = UIColor.secondarySystemBackground
         
         apodNavigationController.tabBarItem = UITabBarItem(
-            title: "Apod",
+            title: Strings.favorites,
             image: UIImage.universe,
             selectedImage: UIImage.universeFill
         )
         favoritesApodNavigationController.tabBarItem = UITabBarItem(
-            title: "Favorites",
+            title: Strings.favorites,
             image: UIImage.start,
             selectedImage: UIImage.starFill
         )

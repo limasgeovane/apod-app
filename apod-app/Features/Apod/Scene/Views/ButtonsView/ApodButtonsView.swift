@@ -22,7 +22,7 @@ final class ApodButtonsView: UIView {
     private lazy var previousButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(previousButtonPressed), for: .touchUpInside)
-        button.setTitle("Previous apod", for: .normal)
+        button.setTitle(Strings.previousApod, for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .primary
         button.backgroundColor = .systemBlue
@@ -33,7 +33,7 @@ final class ApodButtonsView: UIView {
     private lazy var nextButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
-        button.setTitle("Next apod", for: .normal)
+        button.setTitle(Strings.nextApod, for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .primary
         button.backgroundColor = .systemBlue
