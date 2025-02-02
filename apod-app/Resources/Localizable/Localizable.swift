@@ -29,5 +29,5 @@ enum Strings {
     @Localizable static var loading = "loading"
     @Localizable static var apodErrorMessage = "apodErrorMessage"
     @Localizable static var apodErrorAction = "apodErrorAction"
+    @Localizable static var favoritesEmptyMessage = "favoritesEmptyMessage"
 }
-

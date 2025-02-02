@@ -6,6 +6,7 @@
 //
 
 struct ErrorViewViewModel {
+    let emoji: String
     let errorMessage: String
     let actionTitle: String
 }

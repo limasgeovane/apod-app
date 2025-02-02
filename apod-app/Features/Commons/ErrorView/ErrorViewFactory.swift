@@ -10,6 +10,7 @@ import UIKit
 enum ErrorViewFactory {
     static func makeApodError(completionAction: @escaping (() -> Void)) -> ErrorView {
         let viewModel = ErrorViewViewModel(
+            emoji: "⛈️",
             errorMessage: Strings.apodErrorMessage,
             actionTitle: Strings.apodErrorAction
         )

@@ -7,6 +7,7 @@
 
 protocol FavoritesApodPresenterLogic {
     func responseFavoritesApod(favoritesApod: [FavoriteApod])
+    func responseEmptyState()
 }
 
 final class FavoritesApodPresenter: FavoritesApodPresenterLogic {
@@ -18,5 +19,9 @@ final class FavoritesApodPresenter: FavoritesApodPresenterLogic {
         }
         
         display?.displayFavoritesApod(viewModel: viewModel)
+    }
+    
+    func responseEmptyState() {
+        display?.displayEmptyState()
     }
 }

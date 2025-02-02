@@ -1,5 +1,5 @@
 //
-//  ErrorView.swift
+//  EmptyStateView.swift
 //  apod-app
 //
 //  Created by Geovane Lima dos Santos on 02/02/25.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ErrorView: UIView {
+final class EmptyStateView: UIView {
     private lazy var emojiLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -23,28 +23,14 @@ final class ErrorView: UIView {
         label.font = .primary
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.text = viewModel.errorMessage
+        label.text = viewModel.message
         return label
     }()
 
-    private lazy var actionButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(actionButtonPressed), for: .touchUpInside)
-        button.setTitle(viewModel.actionTitle, for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .primary
-        button.backgroundColor = .systemBlue
-        button.layer.cornerRadius = 22
-        return button
-    }()
+    private let viewModel: EmptyStateViewModel
     
-    private let viewModel: ErrorViewViewModel
-    private let completionAction: (() -> Void)
-    
-    init(viewModel: ErrorViewViewModel, completionAction: @escaping (() -> Void)) {
+    init(viewModel: EmptyStateViewModel) {
         self.viewModel = viewModel
-        self.completionAction = completionAction
         super.init(frame: .zero)
 
         setupViewHierarchy()
@@ -55,11 +41,10 @@ final class ErrorView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func setupViewHierarchy() {
         addSubview(emojiLabel)
         addSubview(messageLabel)
-        addSubview(actionButton)
     }
     
     private func setupViewAttributes() {
@@ -74,15 +59,6 @@ final class ErrorView: UIView {
             messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
             messageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
             messageLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -30),
-            
-            actionButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-            actionButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
-            actionButton.heightAnchor.constraint(equalToConstant: 40),
-            actionButton.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor, constant: -16)
         ])
-    }
-
-    @objc private func actionButtonPressed() {
-        completionAction()
     }
 }

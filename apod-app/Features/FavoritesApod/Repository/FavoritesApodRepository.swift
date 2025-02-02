@@ -41,7 +41,6 @@ class FavoritesApodRepository: FavoritesApodRepositoryLogic {
             let favorites = try decoder.decode([FavoriteApod].self, from: data)
             return favorites
         } catch {
-            print("Erro ao decodificar a lista de favoritos: \(error)")
             return []
         }
     }

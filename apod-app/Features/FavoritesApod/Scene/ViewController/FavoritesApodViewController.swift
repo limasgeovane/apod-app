@@ -9,6 +9,7 @@ import UIKit
 
 protocol FavoritesApodViewControllerLogic: AnyObject {
     func displayFavoritesApod(viewModel: [FavoritesApodViewModel])
+    func displayEmptyState()
 }
 
 class FavoritesApodViewController: UIViewController {
@@ -39,6 +40,11 @@ class FavoritesApodViewController: UIViewController {
 extension FavoritesApodViewController: FavoritesApodViewControllerLogic {
     func displayFavoritesApod(viewModel: [FavoritesApodViewModel]) {
         contentView.favoritesApod = viewModel
+        contentView.changeState(state: .content)
+    }
+    
+    func displayEmptyState() {
+        contentView.changeState(state: .empty)
     }
 }
 

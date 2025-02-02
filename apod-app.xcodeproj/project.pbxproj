@@ -46,6 +46,9 @@
 		45DB93972D50166B00D2AED8 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB93962D50166800D2AED8 /* ErrorView.swift */; };
 		45DB93992D50186300D2AED8 /* ErrorViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB93982D50185F00D2AED8 /* ErrorViewViewModel.swift */; };
 		45DB939C2D5019BC00D2AED8 /* ErrorViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB939B2D5019B600D2AED8 /* ErrorViewFactory.swift */; };
+		45DB939F2D5032B900D2AED8 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB939E2D5032B300D2AED8 /* EmptyStateView.swift */; };
+		45DB93A12D5032E400D2AED8 /* EmptyStateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB93A02D5032DF00D2AED8 /* EmptyStateViewModel.swift */; };
+		45DB93A32D5033CE00D2AED8 /* EmptyStateViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB93A22D5033CA00D2AED8 /* EmptyStateViewFactory.swift */; };
 		45F27D642D4BF2D50045747A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45F27D5D2D4BF2D50045747A /* Assets.xcassets */; };
 		45F27D662D4BF2D50045747A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45F27D602D4BF2D50045747A /* LaunchScreen.storyboard */; };
 		45F27D672D4BF2D50045747A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F27D5C2D4BF2D50045747A /* AppDelegate.swift */; };
@@ -127,6 +130,9 @@
 		45DB93962D50166800D2AED8 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		45DB93982D50185F00D2AED8 /* ErrorViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewViewModel.swift; sourceTree = "<group>"; };
 		45DB939B2D5019B600D2AED8 /* ErrorViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewFactory.swift; sourceTree = "<group>"; };
+		45DB939E2D5032B300D2AED8 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		45DB93A02D5032DF00D2AED8 /* EmptyStateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateViewModel.swift; sourceTree = "<group>"; };
+		45DB93A22D5033CA00D2AED8 /* EmptyStateViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateViewFactory.swift; sourceTree = "<group>"; };
 		45F27CEC2D4BB5220045747A /* apod-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "apod-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F27D022D4BB5240045747A /* apod-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "apod-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F27D0C2D4BB5240045747A /* apod-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "apod-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -385,6 +391,7 @@
 		45DB93912D5002C900D2AED8 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				45DB939D2D50327F00D2AED8 /* EmptyStateView */,
 				45DB93952D50166400D2AED8 /* ErrorView */,
 				45DB93922D5002F200D2AED8 /* LoadingView */,
 			);
@@ -407,6 +414,16 @@
 				45DB93962D50166800D2AED8 /* ErrorView.swift */,
 			);
 			path = ErrorView;
+			sourceTree = "<group>";
+		};
+		45DB939D2D50327F00D2AED8 /* EmptyStateView */ = {
+			isa = PBXGroup;
+			children = (
+				45DB93A22D5033CA00D2AED8 /* EmptyStateViewFactory.swift */,
+				45DB93A02D5032DF00D2AED8 /* EmptyStateViewModel.swift */,
+				45DB939E2D5032B300D2AED8 /* EmptyStateView.swift */,
+			);
+			path = EmptyStateView;
 			sourceTree = "<group>";
 		};
 		45F27CE32D4BB5220045747A = {
@@ -861,6 +878,8 @@
 				452D7F912D4C6A0200584A75 /* FavoritesApodTableViewCell.swift in Sources */,
 				45F27D7F2D4BF5250045747A /* ApodView.swift in Sources */,
 				45B500342D4C91F100EE5939 /* NetworkParameterEncoding.swift in Sources */,
+				45DB93A12D5032E400D2AED8 /* EmptyStateViewModel.swift in Sources */,
+				45DB939F2D5032B900D2AED8 /* EmptyStateView.swift in Sources */,
 				45DB93992D50186300D2AED8 /* ErrorViewViewModel.swift in Sources */,
 				45F27D672D4BF2D50045747A /* AppDelegate.swift in Sources */,
 				45B5003E2D4C954E00EE5939 /* ApodRepository.swift in Sources */,
@@ -892,6 +911,7 @@
 				452D7F8D2D4C65C900584A75 /* FavoritesApodView.swift in Sources */,
 				45B500442D4C996B00EE5939 /* ApodPresenter.swift in Sources */,
 				45DB93822D4F130800D2AED8 /* FavoritesApodInteractor.swift in Sources */,
+				45DB93A32D5033CE00D2AED8 /* EmptyStateViewFactory.swift in Sources */,
 				45DB938F2D4FFF9D00D2AED8 /* Localizable.swift in Sources */,
 				45B500492D4C9F4A00EE5939 /* ApodFactory.swift in Sources */,
 			);

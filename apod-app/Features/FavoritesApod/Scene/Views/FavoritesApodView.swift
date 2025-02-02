@@ -14,9 +14,15 @@ protocol FavoritesApodViewDelegate: AnyObject {
 protocol FavoritesApodViewLogic: UIView, AnyObject {
     var delegate: FavoritesApodViewDelegate? { get set }
     var favoritesApod: [FavoritesApodViewModel] { get set }
+    func changeState(state: FavoritesApodView.State)
 }
 
 class FavoritesApodView: UIView, FavoritesApodViewLogic {
+    enum State {
+        case content
+        case empty
+    }
+    
     weak var delegate: FavoritesApodViewDelegate?
     
     var favoritesApod: [FavoritesApodViewModel] = [] {
@@ -36,6 +42,12 @@ class FavoritesApodView: UIView, FavoritesApodViewLogic {
         return tableView
     }()
     
+    private let emptyStateView: EmptyStateView = {
+        let view = EmptyStateViewFactory.makeFavoritesEmptyState()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViewHierarchy()
@@ -47,8 +59,18 @@ class FavoritesApodView: UIView, FavoritesApodViewLogic {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func changeState(state: State) {
+        switch state {
+        case .content:
+            emptyStateView.isHidden = true
+        case .empty:
+            emptyStateView.isHidden = false
+        }
+    }
+    
     private func setupViewHierarchy() {
         addSubview(favoritesApodTableView)
+        addSubview(emptyStateView)
     }
     
     private func setupViewAttributes() {
@@ -60,7 +82,12 @@ class FavoritesApodView: UIView, FavoritesApodViewLogic {
             favoritesApodTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
             favoritesApodTableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             favoritesApodTableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
-            favoritesApodTableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -56)
+            favoritesApodTableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -56),
+            
+            emptyStateView.topAnchor.constraint(equalTo: topAnchor),
+            emptyStateView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            emptyStateView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            emptyStateView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }

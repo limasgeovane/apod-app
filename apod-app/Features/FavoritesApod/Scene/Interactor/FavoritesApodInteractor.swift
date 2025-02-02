@@ -23,7 +23,12 @@ class FavoritesApodInteractor: FavoritesApodInteractorLogic {
     
     func requestFavoritesApod() {
         let favoritesApod = repository.getFavorites()
-        presenter.responseFavoritesApod(favoritesApod: favoritesApod)
+        
+        if favoritesApod.isEmpty {
+            presenter.responseEmptyState()
+        } else {
+            presenter.responseFavoritesApod(favoritesApod: favoritesApod)
+        }
     }
     
     func requestSelectFavoriteApod(indexPath: IndexPath) {
