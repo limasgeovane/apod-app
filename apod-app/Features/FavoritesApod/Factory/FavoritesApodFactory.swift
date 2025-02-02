@@ -9,6 +9,10 @@ import UIKit
 
 enum FavoritesApodFactory {
     static func make() -> UIViewController {
-        return FavoritesApodViewController(contentView: FavoritesApodView())
+        let presenter = FavoritesApodPresenter()
+        let interactor = FavoritesApodInteractor(repository: FavoritesApodRepository(), presenter: presenter)
+        let viewController = FavoritesApodViewController(interactor: interactor, contentView: FavoritesApodView())
+        presenter.display = viewController
+        return viewController
     }
 }

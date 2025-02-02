@@ -39,17 +39,35 @@ class ApodViewController: UIViewController {
     
     private func setupNavigation() {
         let favoriteButton = UIBarButtonItem(
-            image: UIImage(systemName: "star"),
+            image: nil,
             style: .plain,
             target: self,
-            action: nil
+            action: #selector(favoriteButtonPressed)
         )
         navigationItem.rightBarButtonItem = favoriteButton
+    }
+    
+    private func setupFavoriteButton(isFavorite: Bool) {
+        let image = isFavorite ? UIImage.starFill : UIImage.start
+        navigationItem.rightBarButtonItem?.image = image
+    }
+    
+    @objc private func favoriteButtonPressed() {
+        if let currentImage = navigationItem.rightBarButtonItem?.image {
+            if currentImage == UIImage.start {
+                navigationItem.rightBarButtonItem?.image = UIImage.starFill
+                interactor.requestFavoriteApod()
+            } else {
+                navigationItem.rightBarButtonItem?.image = UIImage.start
+                interactor.requestUnfavoriteApod()
+            }
+        }
     }
 }
 
 extension ApodViewController: ApodViewControllerLogic {
     func displayApod(viewModel: ApodViewModel) {
+        setupFavoriteButton(isFavorite: viewModel.isFavorite)
         contentView.setupView(viewModel: viewModel)
     }
     

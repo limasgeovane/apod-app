@@ -31,16 +31,16 @@ final class MainTabBarController: UITabBarController {
         tabBar.isTranslucent = false
         tabBar.barTintColor = UIColor.secondarySystemBackground
         tabBar.backgroundColor = UIColor.secondarySystemBackground
-
+        
         apodNavigationController.tabBarItem = UITabBarItem(
             title: "Apod",
-            image: UIImage(named: "universe"),
-            selectedImage: UIImage(named: "universe-fill")
+            image: UIImage.universe,
+            selectedImage: UIImage.universeFill
         )
         favoritesApodNavigationController.tabBarItem = UITabBarItem(
             title: "Favorites",
-            image: UIImage(named: "start"),
-            selectedImage: UIImage(named: "star-fill")
+            image: UIImage.start,
+            selectedImage: UIImage.starFill
         )
     }
     

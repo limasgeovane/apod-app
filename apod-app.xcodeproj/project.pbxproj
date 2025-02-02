@@ -34,6 +34,11 @@
 		45B500622D4DDFC400EE5939 /* FavoritesApodFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B500612D4DDFBC00EE5939 /* FavoritesApodFactory.swift */; };
 		45DB93722D4E067B00D2AED8 /* URL+YoutubeVideoID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB93712D4E066C00D2AED8 /* URL+YoutubeVideoID.swift */; };
 		45DB93742D4E710400D2AED8 /* Date+IsEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB93732D4E70FA00D2AED8 /* Date+IsEqual.swift */; };
+		45DB937A2D4EEE2700D2AED8 /* FavoriteApod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB93792D4EEE2700D2AED8 /* FavoriteApod.swift */; };
+		45DB937E2D4EF00F00D2AED8 /* FavoritesApodRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB937D2D4EF00F00D2AED8 /* FavoritesApodRepository.swift */; };
+		45DB93822D4F130800D2AED8 /* FavoritesApodInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB93812D4F130800D2AED8 /* FavoritesApodInteractor.swift */; };
+		45DB93842D4F13A500D2AED8 /* FavoritesApodPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB93832D4F13A500D2AED8 /* FavoritesApodPresenter.swift */; };
+		45DB93872D4F148C00D2AED8 /* FavoritesApodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB93862D4F148C00D2AED8 /* FavoritesApodViewModel.swift */; };
 		45F27D642D4BF2D50045747A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45F27D5D2D4BF2D50045747A /* Assets.xcassets */; };
 		45F27D662D4BF2D50045747A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45F27D602D4BF2D50045747A /* LaunchScreen.storyboard */; };
 		45F27D672D4BF2D50045747A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F27D5C2D4BF2D50045747A /* AppDelegate.swift */; };
@@ -103,6 +108,11 @@
 		45B500612D4DDFBC00EE5939 /* FavoritesApodFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesApodFactory.swift; sourceTree = "<group>"; };
 		45DB93712D4E066C00D2AED8 /* URL+YoutubeVideoID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+YoutubeVideoID.swift"; sourceTree = "<group>"; };
 		45DB93732D4E70FA00D2AED8 /* Date+IsEqual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+IsEqual.swift"; sourceTree = "<group>"; };
+		45DB93792D4EEE2700D2AED8 /* FavoriteApod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteApod.swift; sourceTree = "<group>"; };
+		45DB937D2D4EF00F00D2AED8 /* FavoritesApodRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesApodRepository.swift; sourceTree = "<group>"; };
+		45DB93812D4F130800D2AED8 /* FavoritesApodInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesApodInteractor.swift; sourceTree = "<group>"; };
+		45DB93832D4F13A500D2AED8 /* FavoritesApodPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesApodPresenter.swift; sourceTree = "<group>"; };
+		45DB93862D4F148C00D2AED8 /* FavoritesApodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesApodViewModel.swift; sourceTree = "<group>"; };
 		45F27CEC2D4BB5220045747A /* apod-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "apod-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F27D022D4BB5240045747A /* apod-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "apod-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F27D0C2D4BB5240045747A /* apod-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "apod-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -296,6 +306,58 @@
 			path = Factory;
 			sourceTree = "<group>";
 		};
+		45DB93782D4EEE1500D2AED8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				45DB93792D4EEE2700D2AED8 /* FavoriteApod.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		45DB937B2D4EEF6E00D2AED8 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				45DB937D2D4EF00F00D2AED8 /* FavoritesApodRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		45DB937C2D4EEF8100D2AED8 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				45DB937F2D4EF08600D2AED8 /* Interactor */,
+				45DB93802D4EF09600D2AED8 /* Presenter */,
+				452D7F8A2D4C655300584A75 /* ViewController */,
+				45DB93852D4F145700D2AED8 /* ViewModel */,
+				452D7F8B2D4C655D00584A75 /* Views */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		45DB937F2D4EF08600D2AED8 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				45DB93812D4F130800D2AED8 /* FavoritesApodInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		45DB93802D4EF09600D2AED8 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				45DB93832D4F13A500D2AED8 /* FavoritesApodPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		45DB93852D4F145700D2AED8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				45DB93862D4F148C00D2AED8 /* FavoritesApodViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		45F27CE32D4BB5220045747A = {
 			isa = PBXGroup;
 			children = (
@@ -400,8 +462,9 @@
 			isa = PBXGroup;
 			children = (
 				45B500602D4DDFB400EE5939 /* Factory */,
-				452D7F8A2D4C655300584A75 /* ViewController */,
-				452D7F8B2D4C655D00584A75 /* Views */,
+				45DB93782D4EEE1500D2AED8 /* Model */,
+				45DB937B2D4EEF6E00D2AED8 /* Repository */,
+				45DB937C2D4EEF8100D2AED8 /* Scene */,
 			);
 			path = FavoritesApod;
 			sourceTree = "<group>";
@@ -734,11 +797,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45DB937A2D4EEE2700D2AED8 /* FavoriteApod.swift in Sources */,
 				45B5005F2D4DDED000EE5939 /* MainTabBarController.swift in Sources */,
 				45F27D842D4C10F00045747A /* UIFont+Ext.swift in Sources */,
 				45B500322D4C91E000EE5939 /* NetworkMethod.swift in Sources */,
 				45B500362D4C91FE00EE5939 /* NetworkRequestConfigurator.swift in Sources */,
 				45DB93722D4E067B00D2AED8 /* URL+YoutubeVideoID.swift in Sources */,
+				45DB93842D4F13A500D2AED8 /* FavoritesApodPresenter.swift in Sources */,
 				452D7F912D4C6A0200584A75 /* FavoritesApodTableViewCell.swift in Sources */,
 				45F27D7F2D4BF5250045747A /* ApodView.swift in Sources */,
 				45B500342D4C91F100EE5939 /* NetworkParameterEncoding.swift in Sources */,
@@ -759,12 +824,15 @@
 				45F27D682D4BF2D50045747A /* SceneDelegate.swift in Sources */,
 				45F27D692D4BF2D50045747A /* ApodViewController.swift in Sources */,
 				452D7F932D4C839E00584A75 /* Apod.swift in Sources */,
+				45DB93872D4F148C00D2AED8 /* FavoritesApodViewModel.swift in Sources */,
 				45B500462D4C9B4100EE5939 /* String+ToDate.swift in Sources */,
 				45B5003A2D4C925600EE5939 /* AlamofireNetworkRequest.swift in Sources */,
 				452D7F8F2D4C660700584A75 /* FavoritesApodViewController.swift in Sources */,
+				45DB937E2D4EF00F00D2AED8 /* FavoritesApodRepository.swift in Sources */,
 				45B500622D4DDFC400EE5939 /* FavoritesApodFactory.swift in Sources */,
 				452D7F8D2D4C65C900584A75 /* FavoritesApodView.swift in Sources */,
 				45B500442D4C996B00EE5939 /* ApodPresenter.swift in Sources */,
+				45DB93822D4F130800D2AED8 /* FavoritesApodInteractor.swift in Sources */,
 				45B500492D4C9F4A00EE5939 /* ApodFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

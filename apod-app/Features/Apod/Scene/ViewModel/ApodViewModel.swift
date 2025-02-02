@@ -14,4 +14,5 @@ struct ApodViewModel {
     var description: String
     var date: Date
     var isHiddenNextButton: Bool
+    var isFavorite: Bool
 }

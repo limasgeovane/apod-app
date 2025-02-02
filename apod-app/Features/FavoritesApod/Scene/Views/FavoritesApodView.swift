@@ -7,7 +7,17 @@
 
 import UIKit
 
-class FavoritesApodView: UIView {
+protocol FavoritesApodViewLogic: UIView, AnyObject {
+    var favoritesApod: [FavoritesApodViewModel] { get set }
+}
+
+class FavoritesApodView: UIView, FavoritesApodViewLogic {
+    var favoritesApod: [FavoritesApodViewModel] = [] {
+        didSet {
+            favoritesApodTableView.reloadData()
+        }
+    }
+    
     private lazy var favoritesApodTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -57,13 +67,15 @@ extension FavoritesApodView: UITableViewDelegate {
 
 extension FavoritesApodView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        favoritesApod.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FavoritesApodTableViewCell.identifier, for: indexPath) as? FavoritesApodTableViewCell else {
             return UITableViewCell()
         }
+        let favoriteApod = favoritesApod[indexPath.row]
+        cell.configureCell(viewModel: favoriteApod)
         return cell
     }
 }

@@ -12,13 +12,14 @@ class FavoritesApodTableViewCell: UITableViewCell {
     
     private let favoriteApodButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        let image = UIImage.starFill.withRenderingMode(.alwaysTemplate)
+        button.setImage(image, for: .normal)
+        button.tintColor = .systemBlue
         return button
     }()
     
     private let favoriteApodDateLabel: UILabel = {
         let label = UILabel()
-        label.text = "2025-01-30"
         label.font = .primary
         return label
     }()
@@ -26,7 +27,6 @@ class FavoritesApodTableViewCell: UITableViewCell {
     private let favoriteApodTitleLabel: UILabel = {
         let label = UILabel()
         label.font = .secondary
-        label.text = "Hydrogen Clouds of M33"
         return label
     }()
     
@@ -73,5 +73,10 @@ class FavoritesApodTableViewCell: UITableViewCell {
             favoriteStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             favoriteStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8)
         ])
+    }
+    
+    func configureCell(viewModel: FavoritesApodViewModel) {
+        favoriteApodDateLabel.text = viewModel.date
+        favoriteApodTitleLabel.text = viewModel.title
     }
 }
