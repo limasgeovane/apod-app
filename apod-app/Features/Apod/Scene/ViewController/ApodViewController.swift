@@ -9,6 +9,7 @@ import UIKit
 
 protocol ApodViewControllerLogic: AnyObject {
     func displayApod(viewModel: ApodViewModel)
+    func displayLoading()
     func displayError()
 }
 
@@ -34,7 +35,7 @@ class ApodViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigation()
-        interactor.requestApod(date: Date())
+        interactor.requestApod()
     }
     
     private func setupNavigation() {
@@ -68,11 +69,18 @@ class ApodViewController: UIViewController {
 extension ApodViewController: ApodViewControllerLogic {
     func displayApod(viewModel: ApodViewModel) {
         setupFavoriteButton(isFavorite: viewModel.isFavorite)
-        contentView.setupView(viewModel: viewModel)
+        contentView.setupContent(viewModel: viewModel)
+        contentView.changeState(state: .content)
+    }
+    
+    func displayLoading() {
+        navigationItem.rightBarButtonItem?.image = nil
+        contentView.changeState(state: .loading)
     }
     
     func displayError() {
-        
+        navigationItem.rightBarButtonItem?.image = nil
+        contentView.changeState(state: .error)
     }
 }
 
@@ -87,5 +95,9 @@ extension ApodViewController: ApodViewDelegate {
     
     func apodViewDateValueChanged(date: Date) {
         interactor.requestApod(date: date)
+    }
+    
+    func apodViewErrorActionPressed() {
+        interactor.requestYesterdaysApod()
     }
 }

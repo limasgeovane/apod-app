@@ -8,14 +8,17 @@
 import Foundation
 
 protocol ApodInteractorLogic {
+    func requestApod()
     func requestApod(date: Date)
+    func requestYesterdaysApod()
     func requestFavoriteApod()
     func requestUnfavoriteApod()
     func requestPreviousApod()
     func requestNextApod()
 }
 
-final class ApodInteractor: ApodInteractorLogic {
+final class ApodInteractor {
+    private var currentDate: Date?
     private var currentApod: Apod?
     
     private let favoriteApodRepository: FavoritesApodRepositoryLogic
@@ -33,39 +36,9 @@ final class ApodInteractor: ApodInteractorLogic {
         NotificationCenter.default.removeObserver(self)
     }
     
-    func requestApod(date: Date) {
-        fetchApod(date: date)
-    }
-    
-    func requestFavoriteApod() {
-        if let apod = currentApod {
-            let favoriteApod = FavoriteApod(date: apod.date, title: apod.title)
-            favoriteApodRepository.saveFavorite(favoriteApod: favoriteApod)
-        }
-    }
-    
-    func requestUnfavoriteApod() {
-        if let apod = currentApod {
-            let favoriteApod = FavoriteApod(date: apod.date, title: apod.title)
-            favoriteApodRepository.removeFavorite(favoriteApod: favoriteApod)
-        }
-    }
-    
-    func requestPreviousApod() {
-        let previousDate = Calendar.current.date(
-            byAdding: .day, value: -1, to: currentApod?.date.toDate ?? Date()
-        )
-        fetchApod(date: previousDate ?? Date())
-    }
-    
-    func requestNextApod() {
-        let nextDate = Calendar.current.date(
-            byAdding: .day, value: 1, to: currentApod?.date.toDate ?? Date()
-        )
-        fetchApod(date: nextDate ?? Date())
-    }
-    
     private func fetchApod(date: Date) {
+        currentDate = date
+        presenter.responseLoading()
         repository.fetchApod(
             date: date.toString
         ) { [weak self] result in
@@ -97,5 +70,50 @@ final class ApodInteractor: ApodInteractorLogic {
            let favoriteApod = userInfo["apodDate"] as? String {
             requestApod(date: favoriteApod.toDate)
         }
+    }
+}
+
+extension ApodInteractor: ApodInteractorLogic {
+    func requestApod() {
+        fetchApod(date: Date())
+    }
+    
+    func requestApod(date: Date) {
+        fetchApod(date: date)
+    }
+    
+    func requestYesterdaysApod() {
+        let previousDate = Calendar.current.date(
+            byAdding: .day, value: -1, to: Date()
+        )
+        fetchApod(date: previousDate ?? Date())
+    }
+    
+    func requestFavoriteApod() {
+        if let apod = currentApod {
+            let favoriteApod = FavoriteApod(date: apod.date, title: apod.title)
+            favoriteApodRepository.saveFavorite(favoriteApod: favoriteApod)
+        }
+    }
+    
+    func requestUnfavoriteApod() {
+        if let apod = currentApod {
+            let favoriteApod = FavoriteApod(date: apod.date, title: apod.title)
+            favoriteApodRepository.removeFavorite(favoriteApod: favoriteApod)
+        }
+    }
+    
+    func requestPreviousApod() {
+        let previousDate = Calendar.current.date(
+            byAdding: .day, value: -1, to: currentDate ?? Date()
+        )
+        fetchApod(date: previousDate ?? Date())
+    }
+    
+    func requestNextApod() {
+        let nextDate = Calendar.current.date(
+            byAdding: .day, value: 1, to: currentDate ?? Date()
+        )
+        fetchApod(date: nextDate ?? Date())
     }
 }

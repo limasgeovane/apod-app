@@ -27,4 +27,7 @@ enum Strings {
     @Localizable static var previousApod = "previousApod"
     @Localizable static var description = "description"
     @Localizable static var loading = "loading"
+    @Localizable static var apodErrorMessage = "apodErrorMessage"
+    @Localizable static var apodErrorAction = "apodErrorAction"
 }
+

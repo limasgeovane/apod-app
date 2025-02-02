@@ -42,6 +42,10 @@
 		45DB93892D4FD66100D2AED8 /* NotificationsNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB93882D4FD66100D2AED8 /* NotificationsNames.swift */; };
 		45DB938D2D4FFC2600D2AED8 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 45DB938C2D4FFC2600D2AED8 /* Localizable.xcstrings */; };
 		45DB938F2D4FFF9D00D2AED8 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB938E2D4FFF9800D2AED8 /* Localizable.swift */; };
+		45DB93942D50030600D2AED8 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB93932D5002FF00D2AED8 /* LoadingView.swift */; };
+		45DB93972D50166B00D2AED8 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB93962D50166800D2AED8 /* ErrorView.swift */; };
+		45DB93992D50186300D2AED8 /* ErrorViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB93982D50185F00D2AED8 /* ErrorViewViewModel.swift */; };
+		45DB939C2D5019BC00D2AED8 /* ErrorViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB939B2D5019B600D2AED8 /* ErrorViewFactory.swift */; };
 		45F27D642D4BF2D50045747A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45F27D5D2D4BF2D50045747A /* Assets.xcassets */; };
 		45F27D662D4BF2D50045747A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45F27D602D4BF2D50045747A /* LaunchScreen.storyboard */; };
 		45F27D672D4BF2D50045747A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F27D5C2D4BF2D50045747A /* AppDelegate.swift */; };
@@ -119,6 +123,10 @@
 		45DB93882D4FD66100D2AED8 /* NotificationsNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsNames.swift; sourceTree = "<group>"; };
 		45DB938C2D4FFC2600D2AED8 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		45DB938E2D4FFF9800D2AED8 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		45DB93932D5002FF00D2AED8 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		45DB93962D50166800D2AED8 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		45DB93982D50185F00D2AED8 /* ErrorViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewViewModel.swift; sourceTree = "<group>"; };
+		45DB939B2D5019B600D2AED8 /* ErrorViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewFactory.swift; sourceTree = "<group>"; };
 		45F27CEC2D4BB5220045747A /* apod-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "apod-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F27D022D4BB5240045747A /* apod-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "apod-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F27D0C2D4BB5240045747A /* apod-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "apod-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -374,6 +382,33 @@
 			path = Localizable;
 			sourceTree = "<group>";
 		};
+		45DB93912D5002C900D2AED8 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				45DB93952D50166400D2AED8 /* ErrorView */,
+				45DB93922D5002F200D2AED8 /* LoadingView */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		45DB93922D5002F200D2AED8 /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				45DB93932D5002FF00D2AED8 /* LoadingView.swift */,
+			);
+			path = LoadingView;
+			sourceTree = "<group>";
+		};
+		45DB93952D50166400D2AED8 /* ErrorView */ = {
+			isa = PBXGroup;
+			children = (
+				45DB939B2D5019B600D2AED8 /* ErrorViewFactory.swift */,
+				45DB93982D50185F00D2AED8 /* ErrorViewViewModel.swift */,
+				45DB93962D50166800D2AED8 /* ErrorView.swift */,
+			);
+			path = ErrorView;
+			sourceTree = "<group>";
+		};
 		45F27CE32D4BB5220045747A = {
 			isa = PBXGroup;
 			children = (
@@ -427,6 +462,7 @@
 		45F27D722D4BF2E30045747A /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				45DB93912D5002C900D2AED8 /* Commons */,
 				45B5005D2D4DDEBD00EE5939 /* MainTabBar */,
 				45F27D732D4BF2F70045747A /* Apod */,
 				45F27D772D4BF32B0045747A /* FavoritesApod */,
@@ -825,9 +861,11 @@
 				452D7F912D4C6A0200584A75 /* FavoritesApodTableViewCell.swift in Sources */,
 				45F27D7F2D4BF5250045747A /* ApodView.swift in Sources */,
 				45B500342D4C91F100EE5939 /* NetworkParameterEncoding.swift in Sources */,
+				45DB93992D50186300D2AED8 /* ErrorViewViewModel.swift in Sources */,
 				45F27D672D4BF2D50045747A /* AppDelegate.swift in Sources */,
 				45B5003E2D4C954E00EE5939 /* ApodRepository.swift in Sources */,
 				45DB93742D4E710400D2AED8 /* Date+IsEqual.swift in Sources */,
+				45DB93942D50030600D2AED8 /* LoadingView.swift in Sources */,
 				45F27D812D4BFBB80045747A /* ApodViewModel.swift in Sources */,
 				45B5004D2D4CAB0000EE5939 /* ApodMediaProgressView.swift in Sources */,
 				45B500402D4C979A00EE5939 /* ApodInteractor.swift in Sources */,
@@ -836,9 +874,11 @@
 				45B5002C2D4C915F00EE5939 /* Network.swift in Sources */,
 				45B5004F2D4D4A9E00EE5939 /* ApodButtonsView.swift in Sources */,
 				45B5002E2D4C917700EE5939 /* NetworkBaseURL.swift in Sources */,
+				45DB93972D50166B00D2AED8 /* ErrorView.swift in Sources */,
 				45B500382D4C923B00EE5939 /* NetworkRequester.swift in Sources */,
 				45DB93892D4FD66100D2AED8 /* NotificationsNames.swift in Sources */,
 				45B5005C2D4DD17F00EE5939 /* Date+ToString.swift in Sources */,
+				45DB939C2D5019BC00D2AED8 /* ErrorViewFactory.swift in Sources */,
 				45B5004B2D4CA1BD00EE5939 /* ApodMediaView.swift in Sources */,
 				45F27D682D4BF2D50045747A /* SceneDelegate.swift in Sources */,
 				45F27D692D4BF2D50045747A /* ApodViewController.swift in Sources */,
@@ -1021,7 +1061,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1079,7 +1119,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

@@ -8,10 +8,6 @@
 import UIKit
 
 extension UIFont {
-    static let appName: UIFont = {
-        return UIFont(name: "FuturaCyrillicBold", size: 34) ?? UIFont.systemFont(ofSize: 14, weight: .bold)
-    }()
-    
     static let title: UIFont = {
         return UIFont(name: "Roboto-Bold", size: 24) ?? UIFont.systemFont(ofSize: 2, weight: .bold)
     }()

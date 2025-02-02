@@ -12,6 +12,28 @@
         }
       }
     },
+    "apodErrorAction" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show yesterday's Apod"
+          }
+        }
+      }
+    },
+    "apodErrorMessage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Something went wrong, the Apod was not loaded, maybe this Apod is not available yet."
+          }
+        }
+      }
+    },
     "description" : {
       "extractionState" : "manual",
       "localizations" : {

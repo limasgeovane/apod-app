@@ -9,6 +9,7 @@ import Foundation
 
 protocol ApodPresenterLogic {
     func responseApod(apod: Apod, isFavorite: Bool)
+    func responseLoading()
     func responseError()
 }
 
@@ -29,7 +30,11 @@ final class ApodPresenter: ApodPresenterLogic {
         display?.displayApod(viewModel: viewModel)
     }
     
+    func responseLoading() {
+        display?.displayLoading()
+    }
+    
     func responseError() {
-        
+        display?.displayError()
     }
 }

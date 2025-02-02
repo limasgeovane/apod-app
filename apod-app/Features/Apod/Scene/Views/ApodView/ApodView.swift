@@ -12,15 +12,23 @@ protocol ApodViewDelegate: AnyObject {
     func apodViewPreviousPressed()
     func apodViewNextPressed()
     func apodViewDateValueChanged(date: Date)
+    func apodViewErrorActionPressed()
 }
 
 protocol ApodViewLogic: UIView {
     var delegate: ApodViewDelegate? { get set }
 
-    func setupView(viewModel: ApodViewModel)
+    func setupContent(viewModel: ApodViewModel)
+    func changeState(state: ApodView.State)
 }
 
 class ApodView: UIView {
+    enum State {
+        case content
+        case loading
+        case error
+    }
+    
     private let mediaView = ApodMediaView()
     
     private let titleLabel: UILabel = {
@@ -73,6 +81,20 @@ class ApodView: UIView {
         return view
     }()
     
+    private let loadingView: LoadingView = {
+        let view = LoadingView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var errorView: ErrorView = {
+        let view = ErrorViewFactory.makeApodError { [weak self] in
+            self?.delegate?.apodViewErrorActionPressed()
+        }
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     weak var delegate: ApodViewDelegate?
     
     init() {
@@ -89,6 +111,8 @@ class ApodView: UIView {
     private func setupViewHierarchy() {
         addSubview(apodStackView)
         addSubview(apodButtonsView)
+        addSubview(loadingView)
+        addSubview(errorView)
     }
     
     private func setupViewAttributes() {
@@ -105,6 +129,16 @@ class ApodView: UIView {
             apodButtonsView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             apodButtonsView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             apodButtonsView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16),
+            
+            loadingView.topAnchor.constraint(equalTo: topAnchor),
+            loadingView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            loadingView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            loadingView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            errorView.topAnchor.constraint(equalTo: topAnchor),
+            errorView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            errorView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            errorView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
     
@@ -116,12 +150,26 @@ class ApodView: UIView {
 }
 
 extension ApodView: ApodViewLogic {
-    func setupView(viewModel: ApodViewModel) {
+    func setupContent(viewModel: ApodViewModel) {
         mediaView.setup(url: viewModel.mediaURL, type: viewModel.mediaType)
         titleLabel.text = viewModel.title
         descriptionTextView.text = viewModel.description
         datePicker.date = viewModel.date
         apodButtonsView.isHiddenNextButton = viewModel.isHiddenNextButton
+    }
+    
+    func changeState(state: ApodView.State) {
+        switch state {
+        case .content:
+            loadingView.isHidden = true
+            errorView.isHidden = true
+        case .loading:
+            loadingView.isHidden = false
+            errorView.isHidden = true
+        case .error:
+            loadingView.isHidden = true
+            errorView.isHidden = false
+        }
     }
 }
 
