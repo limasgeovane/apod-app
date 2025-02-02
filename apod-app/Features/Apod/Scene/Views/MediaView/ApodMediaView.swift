@@ -28,6 +28,12 @@ final class ApodMediaView: UIView {
         return view
     }()
     
+    private lazy var youtubePlayerView: YTPlayerView = {
+        let view = YTPlayerView()
+        view.delegate = self
+        return view
+    }()
+    
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [mediaProgressView, imageView, indicatorView, videoPlayerView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -51,6 +57,8 @@ final class ApodMediaView: UIView {
             mediaProgressView.isHidden = false
             videoPlayerView.isHidden = true
             indicatorView.isHidden = true
+            indicatorView.stopAnimating()
+            youtubePlayerView.stopVideo()
             loadImage(url: url)
         case .video:
             imageView.isHidden = true
@@ -81,16 +89,14 @@ final class ApodMediaView: UIView {
     
     private func loadVideo(url: URL) {
         if let videoID = url.youtubeVideoID {
-            let youtubePlayerView = YTPlayerView(frame: bounds)
-            youtubePlayerView.delegate = self
-            videoPlayerView.addSubview(youtubePlayerView)
-            
+            youtubePlayerView.frame = bounds
             youtubePlayerView.load(withVideoId: videoID)
         }
     }
     
     private func setupViewHierarchy() {
         addSubview(stackView)
+        videoPlayerView.addSubview(youtubePlayerView)
     }
     
     private func setupLayout() {
