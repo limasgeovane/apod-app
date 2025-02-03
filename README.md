@@ -64,19 +64,10 @@ Dependencies were installed using using [Swift Package Manager (SPM)](https://de
 
 ## 🎥 Demo
 
-<div style="display: flex; justify-content: space-around;">
-  <div>
-    <h3>Dark Mode</h3>
-    <video width="300" controls>
-      <source src="medias-demo/videos/video-demo-1.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-  <div>
-    <h3>Light Mode</h3>
-    <video width="300" controls>
-      <source src="medias-demo/videos/video-demo-2.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-</div>
+**Dark Mode**
+![Dark Mode](medias-demo/images/dark-mode-demo.gif)
+
+**Light Mode**
+![Light Mode](medias-demo/images/light-mode-demo.gif)
+
+---
