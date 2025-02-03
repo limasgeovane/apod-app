@@ -15,8 +15,7 @@ target 'apod-app' do
     # Pods for testing
   end
 
-  target 'apod-appUITests' do
-    # Pods for testing
+  target "apod-app-snapshot-tests" do
+    # Pods for snapshot tests
   end
-
 end

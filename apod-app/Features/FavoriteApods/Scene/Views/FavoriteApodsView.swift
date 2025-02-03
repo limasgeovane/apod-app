@@ -8,12 +8,12 @@
 import UIKit
 
 protocol FavoriteApodsViewDelegate: AnyObject {
-    func FavoriteApodsViewDidApodSelected(indexPath: IndexPath)
+    func favoriteApodsViewDidApodSelected(indexPath: IndexPath)
 }
 
 protocol FavoriteApodsViewLogic: UIView, AnyObject {
     var delegate: FavoriteApodsViewDelegate? { get set }
-    var FavoriteApods: [FavoriteApodsViewModel] { get set }
+    var favoriteApods: [FavoriteApodsViewModel] { get set }
     func changeState(state: FavoriteApodsView.State)
 }
 
@@ -25,7 +25,7 @@ class FavoriteApodsView: UIView, FavoriteApodsViewLogic {
     
     weak var delegate: FavoriteApodsViewDelegate?
     
-    var FavoriteApods: [FavoriteApodsViewModel] = [] {
+    var favoriteApods: [FavoriteApodsViewModel] = [] {
         didSet {
             FavoriteApodsTableView.reloadData()
         }
@@ -100,19 +100,19 @@ extension FavoriteApodsView: UITableViewDelegate {
 
 extension FavoriteApodsView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        FavoriteApods.count
+        favoriteApods.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FavoriteApodsTableViewCell.identifier, for: indexPath) as? FavoriteApodsTableViewCell else {
             return UITableViewCell()
         }
-        let favoriteApod = FavoriteApods[indexPath.row]
+        let favoriteApod = favoriteApods[indexPath.row]
         cell.configureCell(viewModel: favoriteApod)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.FavoriteApodsViewDidApodSelected(indexPath: indexPath)
+        delegate?.favoriteApodsViewDidApodSelected(indexPath: indexPath)
     }
 }

@@ -52,6 +52,17 @@
                ReferencedContainer = "container:apod-app.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "45A2E4F82D50835800B84CE0"
+               BuildableName = "apod-app-snapshot-tests.xctest"
+               BlueprintName = "apod-app-snapshot-tests"
+               ReferencedContainer = "container:apod-app.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

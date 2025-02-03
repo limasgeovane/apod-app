@@ -39,7 +39,7 @@ class FavoriteApodsViewController: UIViewController {
 
 extension FavoriteApodsViewController: FavoriteApodsViewControllerLogic {
     func displayFavoriteApods(viewModel: [FavoriteApodsViewModel]) {
-        contentView.FavoriteApods = viewModel
+        contentView.favoriteApods = viewModel
         contentView.changeState(state: .content)
     }
     
@@ -49,7 +49,7 @@ extension FavoriteApodsViewController: FavoriteApodsViewControllerLogic {
 }
 
 extension FavoriteApodsViewController: FavoriteApodsViewDelegate {
-    func FavoriteApodsViewDidApodSelected(indexPath: IndexPath) {
+    func favoriteApodsViewDidApodSelected(indexPath: IndexPath) {
         interactor.requestSelectFavoriteApod(indexPath: indexPath)
     }
 }

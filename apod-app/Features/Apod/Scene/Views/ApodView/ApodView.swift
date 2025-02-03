@@ -138,7 +138,7 @@ class ApodView: UIView {
             errorView.topAnchor.constraint(equalTo: topAnchor),
             errorView.leadingAnchor.constraint(equalTo: leadingAnchor),
             errorView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            errorView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            errorView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
     
