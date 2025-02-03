@@ -24,11 +24,18 @@ final class ApodInteractor {
     private let favoriteApodRepository: FavoritesApodRepositoryLogic
     private let repository: ApodRepositoryLogic
     private let presenter: ApodPresenterLogic
+    private let dateProvider: DateProvider
     
-    init(repository: ApodRepositoryLogic, favoriteApodRepository: FavoritesApodRepositoryLogic, presenter: ApodPresenterLogic) {
+    init(
+        repository: ApodRepositoryLogic,
+        favoriteApodRepository: FavoritesApodRepositoryLogic,
+        presenter: ApodPresenterLogic,
+        dateProvider: DateProvider
+    ) {
         self.repository = repository
         self.favoriteApodRepository = favoriteApodRepository
         self.presenter = presenter
+        self.dateProvider = dateProvider
         setupNotifications()
     }
     
@@ -75,7 +82,7 @@ final class ApodInteractor {
 
 extension ApodInteractor: ApodInteractorLogic {
     func requestApod() {
-        fetchApod(date: Date())
+        fetchApod(date: dateProvider.currentDate())
     }
     
     func requestApod(date: Date) {
@@ -84,9 +91,9 @@ extension ApodInteractor: ApodInteractorLogic {
     
     func requestYesterdaysApod() {
         let previousDate = Calendar.current.date(
-            byAdding: .day, value: -1, to: Date()
+            byAdding: .day, value: -1, to: dateProvider.currentDate()
         )
-        fetchApod(date: previousDate ?? Date())
+        fetchApod(date: previousDate ?? dateProvider.currentDate())
     }
     
     func requestFavoriteApod() {
@@ -105,15 +112,15 @@ extension ApodInteractor: ApodInteractorLogic {
     
     func requestPreviousApod() {
         let previousDate = Calendar.current.date(
-            byAdding: .day, value: -1, to: currentDate ?? Date()
+            byAdding: .day, value: -1, to: currentDate ?? dateProvider.currentDate()
         )
-        fetchApod(date: previousDate ?? Date())
+        fetchApod(date: previousDate ?? dateProvider.currentDate())
     }
     
     func requestNextApod() {
         let nextDate = Calendar.current.date(
-            byAdding: .day, value: 1, to: currentDate ?? Date()
+            byAdding: .day, value: 1, to: currentDate ?? dateProvider.currentDate()
         )
-        fetchApod(date: nextDate ?? Date())
+        fetchApod(date: nextDate ?? dateProvider.currentDate())
     }
 }

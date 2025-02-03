@@ -16,6 +16,12 @@ protocol ApodPresenterLogic {
 final class ApodPresenter: ApodPresenterLogic {
     weak var display: ApodViewControllerLogic?
     
+    private let dateProvider: DateProvider
+    
+    init(dateProvider: DateProvider) {
+        self.dateProvider = dateProvider
+    }
+    
     func responseApod(apod: Apod, isFavorite: Bool) {
         let viewModel = ApodViewModel(
             mediaURL: apod.hdurl ?? apod.url,
@@ -23,7 +29,7 @@ final class ApodPresenter: ApodPresenterLogic {
             title: apod.title,
             description: apod.explanation,
             date: apod.date.toDate,
-            isHiddenNextButton: Date().isEqualTo(apod.date.toDate),
+            isHiddenNextButton: dateProvider.currentDate().isEqualTo(apod.date.toDate),
             isFavorite: isFavorite
         )
         

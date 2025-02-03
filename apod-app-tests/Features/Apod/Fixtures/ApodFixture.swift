@@ -13,7 +13,7 @@ extension Apod {
         title: String = "Apod title",
         date: String = "2025-02-02",
         explanation: String = "Apod explanation",
-        hdurl: URL? = URL.init(string: "https://apod.hdurl.com"),
+        hdurl: URL? = URL(string: "https://apod.hdurl.com"),
         url: URL? = URL(string: "https://apod.durl.com"),
         mediaType: Apod.MediaType = .image
     ) -> Self {

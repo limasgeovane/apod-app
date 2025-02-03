@@ -10,6 +10,7 @@ import Foundation
 
 extension ApodViewModel {
     static func fixture(
+        mediaURL: URL? = URL(string: "https://apod.hdurl.com"),
         mediaType: Apod.MediaType = .image,
         title: String = "Apod title",
         description: String = "Apod explanation",
@@ -18,6 +19,7 @@ extension ApodViewModel {
         isFavorite: Bool = true
     ) -> Self {
         .init(
+            mediaURL: mediaURL,
             mediaType: mediaType,
             title: title,
             description: description,

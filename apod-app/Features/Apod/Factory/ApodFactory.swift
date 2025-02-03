@@ -9,11 +9,13 @@ import UIKit
 
 enum ApodFactory {
     static func make() -> UIViewController {
-        let presenter = ApodPresenter()
+        let dateProvider = DefaultDateProvider()
+        let presenter = ApodPresenter(dateProvider: dateProvider)
         let interactor = ApodInteractor(
             repository: ApodRepository(),
             favoriteApodRepository: FavoritesApodRepository(),
-            presenter: presenter
+            presenter: presenter,
+            dateProvider: dateProvider
         )
         let viewController = ApodViewController(interactor: interactor, contentView: ApodView())
         presenter.display = viewController
