@@ -74,8 +74,8 @@ final class ApodInteractor {
     
     @objc private func favoriteApodSelected(notification: Notification) {
         if let userInfo = notification.userInfo,
-           let favoriteApod = userInfo["apodDate"] as? String {
-            requestApod(date: favoriteApod.toDate)
+           let dateApod = userInfo["apodDate"] as? Date {
+            requestApod(date: dateApod)
         }
     }
 }

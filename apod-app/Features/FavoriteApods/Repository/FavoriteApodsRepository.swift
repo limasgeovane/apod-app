@@ -39,7 +39,8 @@ class FavoriteApodsRepository: FavoriteApodsRepositoryLogic {
         let decoder = JSONDecoder()
         do {
             let favorites = try decoder.decode([FavoriteApod].self, from: data)
-            return favorites
+            
+            return favorites.sorted { $0.date > $1.date }
         } catch {
             return []
         }

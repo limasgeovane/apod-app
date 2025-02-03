@@ -34,6 +34,7 @@ class ApodView: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .title
+        label.numberOfLines = 0
         return label
     }()
     
@@ -44,13 +45,11 @@ class ApodView: UIView {
         return label
     }()
     
-    private let descriptionTextView: UITextView = {
-        let textView = UITextView()
-        textView.font = .secondary
-        textView.textContainerInset = .zero
-        textView.textContainer.lineFragmentPadding = 0
-        textView.showsVerticalScrollIndicator = false
-        return textView
+    private let descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.font = .secondary
+        label.numberOfLines = 0
+        return label
     }()
     
     private lazy var datePicker: UIDatePicker = {
@@ -62,15 +61,22 @@ class ApodView: UIView {
         return datePicker
     }()
 
-    private lazy var apodStackView: UIStackView = {
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.showsVerticalScrollIndicator = false
+        return scrollView
+    }()
+    
+    private lazy var stackView: UIStackView = {
         let stackView = UIStackView(
-            arrangedSubviews: [mediaView, titleLabel, descriptionTitleLabel, descriptionTextView, datePicker]
+            arrangedSubviews: [mediaView, titleLabel, descriptionTitleLabel, descriptionLabel]
         )
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 16
         stackView.setCustomSpacing(8, after: descriptionTitleLabel)
-        stackView.setCustomSpacing(16, after: descriptionTextView)
+        stackView.setCustomSpacing(16, after: descriptionLabel)
         return stackView
     }()
     
@@ -109,7 +115,9 @@ class ApodView: UIView {
     }
     
     private func setupViewHierarchy() {
-        addSubview(apodStackView)
+        addSubview(scrollView)
+        scrollView.addSubview(stackView)
+        addSubview(datePicker)
         addSubview(apodButtonsView)
         addSubview(loadingView)
         addSubview(errorView)
@@ -118,14 +126,23 @@ class ApodView: UIView {
     private func setupViewAttributes() {
         backgroundColor = .systemBackground
     }
-    
+
     private func setupLayout() {
         NSLayoutConstraint.activate([
-            apodStackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
-            apodStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            apodStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            scrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: datePicker.topAnchor, constant: -16),
             
-            apodButtonsView.topAnchor.constraint(equalTo: apodStackView.bottomAnchor, constant: 16),
+            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+
+            datePicker.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            datePicker.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            datePicker.bottomAnchor.constraint(equalTo: apodButtonsView.topAnchor, constant: -16),
+            
             apodButtonsView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             apodButtonsView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             apodButtonsView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16),
@@ -153,7 +170,7 @@ extension ApodView: ApodViewLogic {
     func setupContent(viewModel: ApodViewModel) {
         mediaView.setup(url: viewModel.mediaURL, type: viewModel.mediaType)
         titleLabel.text = viewModel.title
-        descriptionTextView.text = viewModel.description
+        descriptionLabel.text = viewModel.description
         datePicker.date = viewModel.date
         apodButtonsView.isHiddenNextButton = viewModel.isHiddenNextButton
     }

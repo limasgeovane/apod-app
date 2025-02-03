@@ -14,11 +14,8 @@ final class FavoriteApodsPresenter: FavoriteApodsPresenterLogic {
     weak var display: FavoriteApodsViewControllerLogic?
     
     func responseFavoriteApods(favoriteApods: [FavoriteApod]) {
-        
-        let favoritesSorteds = favoriteApods.sorted { $0.date > $1.date }
-        
-        let viewModel = favoritesSorteds.map { FavoriteApods in
-            return FavoriteApodsViewModel(date: FavoriteApods.date.toStringExtended, title: FavoriteApods.title)
+        let viewModel = favoriteApods.map { favoriteApods in
+            return FavoriteApodsViewModel(date: favoriteApods.date.toStringExtended, title: favoriteApods.title)
         }
         
         display?.displayFavoriteApods(viewModel: viewModel)
