@@ -92,14 +92,14 @@ extension ApodInteractor: ApodInteractorLogic {
     func requestFavoriteApod() {
         if let apod = currentApod {
             let favoriteApod = FavoriteApod(date: apod.date, title: apod.title)
-            favoriteApodRepository.saveFavorite(favoriteApod: favoriteApod)
+            favoriteApodRepository.favorite(favoriteApod: favoriteApod)
         }
     }
     
     func requestUnfavoriteApod() {
         if let apod = currentApod {
             let favoriteApod = FavoriteApod(date: apod.date, title: apod.title)
-            favoriteApodRepository.removeFavorite(favoriteApod: favoriteApod)
+            favoriteApodRepository.unfavorite(favoriteApod: favoriteApod)
         }
     }
     

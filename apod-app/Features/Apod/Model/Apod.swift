@@ -12,7 +12,7 @@ struct Apod: Decodable, Equatable {
     let date: String
     let explanation: String
     let hdurl: URL?
-    let url: URL
+    let url: URL?
     let mediaType: MediaType
     
     enum MediaType: String, Decodable {

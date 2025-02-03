@@ -38,7 +38,7 @@ final class MainTabBarController: UITabBarController {
         tabBar.backgroundColor = UIColor.secondarySystemBackground
         
         apodNavigationController.tabBarItem = UITabBarItem(
-            title: Strings.favorites,
+            title: Strings.apod,
             image: UIImage.universe,
             selectedImage: UIImage.universeFill
         )

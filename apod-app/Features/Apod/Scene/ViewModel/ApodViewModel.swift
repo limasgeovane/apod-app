@@ -8,7 +8,7 @@
 import Foundation
 
 struct ApodViewModel {
-    var mediaURL: URL
+    var mediaURL: URL?
     var mediaType: Apod.MediaType
     var title: String
     var description: String

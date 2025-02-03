@@ -10,7 +10,7 @@ target 'apod-app' do
   pod 'Kingfisher'
   pod 'youtube-ios-player-helper'
 
-  target 'apod-appTests' do
+  target 'apod-app-tests' do
     inherit! :search_paths
     # Pods for testing
   end

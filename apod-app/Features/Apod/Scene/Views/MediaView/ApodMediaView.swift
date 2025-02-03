@@ -50,7 +50,7 @@ final class ApodMediaView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(url: URL, type: Apod.MediaType) {
+    func setup(url: URL?, type: Apod.MediaType) {
         switch type {
         case .image:
             imageView.isHidden = true
@@ -70,7 +70,7 @@ final class ApodMediaView: UIView {
         }
     }
     
-    private func loadImage(url: URL) {
+    private func loadImage(url: URL?) {
         imageView.kf.setImage(with: url) { [weak self] receivedSize, totalSize in
             let progress = Float(receivedSize) / Float(totalSize)
             self?.mediaProgressView.progress = progress
@@ -87,8 +87,8 @@ final class ApodMediaView: UIView {
         }
     }
     
-    private func loadVideo(url: URL) {
-        if let videoID = url.youtubeVideoID {
+    private func loadVideo(url: URL?) {
+        if let url = url, let videoID = url.youtubeVideoID {
             youtubePlayerView.frame = bounds
             youtubePlayerView.load(withVideoId: videoID)
         }

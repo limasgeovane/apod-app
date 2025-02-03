@@ -8,16 +8,16 @@
 import Foundation
 
 protocol FavoritesApodRepositoryLogic {
-    func saveFavorite(favoriteApod: FavoriteApod)
+    func favorite(favoriteApod: FavoriteApod)
     func getFavorites() -> [FavoriteApod]
-    func removeFavorite(favoriteApod: FavoriteApod)
+    func unfavorite(favoriteApod: FavoriteApod)
     func isApodFavorite(date: String) -> Bool
 }
 
 class FavoritesApodRepository: FavoritesApodRepositoryLogic {
     private let favoritesKey = "favoritesApod"
     
-    func saveFavorite(favoriteApod: FavoriteApod) {
+    func favorite(favoriteApod: FavoriteApod) {
         var favorites = getFavorites()
         
         favorites.append(favoriteApod)
@@ -45,7 +45,7 @@ class FavoritesApodRepository: FavoritesApodRepositoryLogic {
         }
     }
     
-    func removeFavorite(favoriteApod: FavoriteApod) {
+    func unfavorite(favoriteApod: FavoriteApod) {
         var favorites = getFavorites()
         
         favorites.removeAll { existingFavorite in
