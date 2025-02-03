@@ -18,7 +18,7 @@ final class FavoriteApodsPresenterTests: XCTestCase {
     }()
     
     func test_responseFavoriteApods_shouldDisplayFavoriteApods() {
-        sut.responseFavoriteApods(FavoriteApods: [.fixture()])
+        sut.responseFavoriteApods(favoriteApods: [.fixture()])
         
         XCTAssertEqual(viewControllerSpy.displayFavoriteApodsCount, 1)
         XCTAssertEqual(viewControllerSpy.displayFavoriteApodsParameterViewModel, [.fixture()])

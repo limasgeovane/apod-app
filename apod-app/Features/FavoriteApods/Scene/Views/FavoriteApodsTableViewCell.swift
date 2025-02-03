@@ -19,6 +19,7 @@ class FavoriteApodsTableViewCell: UITableViewCell {
     private let favoriteApodTitleLabel: UILabel = {
         let label = UILabel()
         label.font = .secondary
+        label.numberOfLines = 0
         return label
     }()
     

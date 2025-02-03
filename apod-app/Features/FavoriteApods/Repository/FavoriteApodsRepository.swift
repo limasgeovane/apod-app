@@ -63,7 +63,7 @@ class FavoriteApodsRepository: FavoriteApodsRepositoryLogic {
     
     func isApodFavorite(date: String) -> Bool {
         return getFavorites().contains {
-            $0.date == date
+            $0.date == date.toDate
         }
     }
 }

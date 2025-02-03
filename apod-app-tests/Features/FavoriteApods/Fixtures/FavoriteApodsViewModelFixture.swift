@@ -9,7 +9,7 @@
 
 extension FavoriteApodsViewModel {
     static func fixture(
-        date: String = "2025-02-02",
+        date: String = "2 Feb 2025",
         title: String = "Apod title"
     ) -> Self {
         .init(date: date, title: title)

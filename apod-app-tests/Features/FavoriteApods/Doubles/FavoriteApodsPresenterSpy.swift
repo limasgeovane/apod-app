@@ -12,9 +12,9 @@ final class FavoriteApodsPresenterSpy: FavoriteApodsPresenterLogic {
     private(set) var responseFavoriteApodsCount = 0
     private(set) var responseFavoriteApodsParameterFavoriteApods: [FavoriteApod]?
 
-    func responseFavoriteApods(FavoriteApods: [FavoriteApod]) {
+    func responseFavoriteApods(favoriteApods: [FavoriteApod]) {
         responseFavoriteApodsCount += 1
-        responseFavoriteApodsParameterFavoriteApods = FavoriteApods
+        responseFavoriteApodsParameterFavoriteApods = favoriteApods
     }
 
     private(set) var responseEmptyStateCount = 0

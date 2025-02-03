@@ -8,6 +8,6 @@
 import Foundation
 
 struct FavoriteApod: Codable, Equatable {
-    let date: String
+    let date: Date
     let title: String
 }

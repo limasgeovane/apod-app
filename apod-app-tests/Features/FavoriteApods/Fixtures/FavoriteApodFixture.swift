@@ -6,10 +6,11 @@
 //
 
 @testable import apod_app
+import Foundation
 
 extension FavoriteApod {
     static func fixture(
-        date: String = "2025-02-02",
+        date: Date = "2025-02-02".toDate,
         title: String = "Apod title"
     ) -> Self {
         .init(date: date, title: title)

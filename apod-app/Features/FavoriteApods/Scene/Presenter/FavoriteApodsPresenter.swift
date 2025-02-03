@@ -6,16 +6,19 @@
 //
 
 protocol FavoriteApodsPresenterLogic {
-    func responseFavoriteApods(FavoriteApods: [FavoriteApod])
+    func responseFavoriteApods(favoriteApods: [FavoriteApod])
     func responseEmptyState()
 }
 
 final class FavoriteApodsPresenter: FavoriteApodsPresenterLogic {
     weak var display: FavoriteApodsViewControllerLogic?
     
-    func responseFavoriteApods(FavoriteApods: [FavoriteApod]) {
-        let viewModel = FavoriteApods.map { FavoriteApods in
-            return FavoriteApodsViewModel(date: FavoriteApods.date, title: FavoriteApods.title)
+    func responseFavoriteApods(favoriteApods: [FavoriteApod]) {
+        
+        let favoritesSorteds = favoriteApods.sorted { $0.date > $1.date }
+        
+        let viewModel = favoritesSorteds.map { FavoriteApods in
+            return FavoriteApodsViewModel(date: FavoriteApods.date.toStringExtended, title: FavoriteApods.title)
         }
         
         display?.displayFavoriteApods(viewModel: viewModel)

@@ -27,11 +27,11 @@ class FavoriteApodsView: UIView, FavoriteApodsViewLogic {
     
     var favoriteApods: [FavoriteApodsViewModel] = [] {
         didSet {
-            FavoriteApodsTableView.reloadData()
+            favoriteApodsTableView.reloadData()
         }
     }
     
-    private lazy var FavoriteApodsTableView: UITableView = {
+    private lazy var favoriteApodsTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(FavoriteApodsTableViewCell.self, forCellReuseIdentifier: FavoriteApodsTableViewCell.identifier)
@@ -69,7 +69,7 @@ class FavoriteApodsView: UIView, FavoriteApodsViewLogic {
     }
     
     private func setupViewHierarchy() {
-        addSubview(FavoriteApodsTableView)
+        addSubview(favoriteApodsTableView)
         addSubview(emptyStateView)
     }
     
@@ -79,10 +79,10 @@ class FavoriteApodsView: UIView, FavoriteApodsViewLogic {
     
     private func setupLayout() {
         NSLayoutConstraint.activate([
-            FavoriteApodsTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
-            FavoriteApodsTableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
-            FavoriteApodsTableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
-            FavoriteApodsTableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -56),
+            favoriteApodsTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
+            favoriteApodsTableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            favoriteApodsTableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
+            favoriteApodsTableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -56),
             
             emptyStateView.topAnchor.constraint(equalTo: topAnchor),
             emptyStateView.leadingAnchor.constraint(equalTo: leadingAnchor),
