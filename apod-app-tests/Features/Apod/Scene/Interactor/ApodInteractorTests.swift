@@ -10,12 +10,12 @@ import XCTest
 
 final class ApodInteractorTests: XCTestCase {
     let repositorySpy = ApodRepositorySpy()
-    let favoriteApodRepository = FavoritesApodRepositorySpy()
+    let favoriteApodsRepository = FavoriteApodsRepositorySpy()
     let presenterSpy = ApodPresenterSpy()
     
     lazy var sut = ApodInteractor(
         repository: repositorySpy,
-        favoriteApodRepository: favoriteApodRepository,
+        favoriteApodsRepository: favoriteApodsRepository,
         presenter: presenterSpy,
         dateProvider: DefaultDateProviderSpy()
     )
@@ -102,8 +102,8 @@ final class ApodInteractorTests: XCTestCase {
         
         sut.requestFavoriteApod()
         
-        XCTAssertEqual(favoriteApodRepository.favoriteCount, 1)
-        XCTAssertEqual(favoriteApodRepository.favoriteParameterFavoriteApod, .fixture())
+        XCTAssertEqual(favoriteApodsRepository.favoriteCount, 1)
+        XCTAssertEqual(favoriteApodsRepository.favoriteParameterFavoriteApod, .fixture())
     }
     
     func test_requestUnfavoriteApod_shouldUnfavoriteApod() {
@@ -113,8 +113,8 @@ final class ApodInteractorTests: XCTestCase {
         
         sut.requestUnfavoriteApod()
         
-        XCTAssertEqual(favoriteApodRepository.unfavoriteCount, 1)
-        XCTAssertEqual(favoriteApodRepository.unfavoriteParameterFavoriteApod, .fixture())
+        XCTAssertEqual(favoriteApodsRepository.unfavoriteCount, 1)
+        XCTAssertEqual(favoriteApodsRepository.unfavoriteParameterFavoriteApod, .fixture())
     }
     
     func test_requestPreviousApod_givenSuccess_shouldResponsePreviousApod() {

@@ -13,7 +13,7 @@ enum ApodFactory {
         let presenter = ApodPresenter(dateProvider: dateProvider)
         let interactor = ApodInteractor(
             repository: ApodRepository(),
-            favoriteApodRepository: FavoritesApodRepository(),
+            favoriteApodsRepository: FavoriteApodsRepository(),
             presenter: presenter,
             dateProvider: dateProvider
         )

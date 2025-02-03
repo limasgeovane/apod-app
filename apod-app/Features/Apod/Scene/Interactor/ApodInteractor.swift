@@ -21,19 +21,19 @@ final class ApodInteractor {
     private var currentDate: Date?
     private var currentApod: Apod?
     
-    private let favoriteApodRepository: FavoritesApodRepositoryLogic
+    private let favoriteApodsRepository: FavoriteApodsRepositoryLogic
     private let repository: ApodRepositoryLogic
     private let presenter: ApodPresenterLogic
     private let dateProvider: DateProvider
     
     init(
         repository: ApodRepositoryLogic,
-        favoriteApodRepository: FavoritesApodRepositoryLogic,
+        favoriteApodsRepository: FavoriteApodsRepositoryLogic,
         presenter: ApodPresenterLogic,
         dateProvider: DateProvider
     ) {
         self.repository = repository
-        self.favoriteApodRepository = favoriteApodRepository
+        self.favoriteApodsRepository = favoriteApodsRepository
         self.presenter = presenter
         self.dateProvider = dateProvider
         setupNotifications()
@@ -55,7 +55,7 @@ final class ApodInteractor {
                 self.currentApod = apod
                 self.presenter.responseApod(
                     apod: apod,
-                    isFavorite: self.favoriteApodRepository.isApodFavorite(date: apod.date)
+                    isFavorite: self.favoriteApodsRepository.isApodFavorite(date: apod.date)
                 )
             case .failure:
                 self.presenter.responseError()
@@ -99,14 +99,14 @@ extension ApodInteractor: ApodInteractorLogic {
     func requestFavoriteApod() {
         if let apod = currentApod {
             let favoriteApod = FavoriteApod(date: apod.date, title: apod.title)
-            favoriteApodRepository.favorite(favoriteApod: favoriteApod)
+            favoriteApodsRepository.favorite(favoriteApod: favoriteApod)
         }
     }
     
     func requestUnfavoriteApod() {
         if let apod = currentApod {
             let favoriteApod = FavoriteApod(date: apod.date, title: apod.title)
-            favoriteApodRepository.unfavorite(favoriteApod: favoriteApod)
+            favoriteApodsRepository.unfavorite(favoriteApod: favoriteApod)
         }
     }
     

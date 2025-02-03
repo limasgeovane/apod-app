@@ -11,8 +11,8 @@ final class MainTabBarController: UITabBarController {
     private let apodViewController = ApodFactory.make()
     private lazy var apodNavigationController = UINavigationController(rootViewController: apodViewController)
     
-    private let favoritesApodViewController = FavoritesApodFactory.make()
-    private lazy var favoritesApodNavigationController = UINavigationController(rootViewController: favoritesApodViewController)
+    private let favoriteApodsViewController = FavoriteApodsFactory.make()
+    private lazy var favoriteApodsNavigationController = UINavigationController(rootViewController: favoriteApodsViewController)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ final class MainTabBarController: UITabBarController {
     
     private func setupTitles() {
         apodViewController.title = Strings.apod
-        favoritesApodViewController.title = Strings.favorites
+        favoriteApodsViewController.title = Strings.favorites
     }
     
     private func setupTabBar() {
@@ -42,7 +42,7 @@ final class MainTabBarController: UITabBarController {
             image: UIImage.universe,
             selectedImage: UIImage.universeFill
         )
-        favoritesApodNavigationController.tabBarItem = UITabBarItem(
+        favoriteApodsNavigationController.tabBarItem = UITabBarItem(
             title: Strings.favorites,
             image: UIImage.start,
             selectedImage: UIImage.starFill
@@ -50,7 +50,7 @@ final class MainTabBarController: UITabBarController {
     }
     
     private func setupViewControllers() {
-        viewControllers = [apodNavigationController, favoritesApodNavigationController]
+        viewControllers = [apodNavigationController, favoriteApodsNavigationController]
     }
     
     private func setupNotifications() {
