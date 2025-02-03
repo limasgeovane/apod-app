@@ -64,10 +64,15 @@ Dependencies were installed using using [Swift Package Manager (SPM)](https://de
 
 ## 🎥 Demo
 
-**Dark Mode**
-![Dark Mode](medias-demo/images/dark-mode-demo.gif)
-
-**Light Mode**
-![Light Mode](medias-demo/images/light-mode-demo.gif)
+<div style="display: flex; justify-content: space-evenly; align-items: center; gap: 20px; flex-wrap: nowrap;">
+  <div style="text-align: center;">
+    <h3>Dark Mode</h3>
+    <img src="medias-demo/images/dark-mode-demo.gif" alt="Dark Mode Demo" style="width: 300px;" />
+  </div>
+  <div style="text-align: center;">
+    <h3>Light Mode</h3>
+    <img src="medias-demo/images/light-mode-demo.gif" alt="Light Mode Demo" style="width: 300px;" />
+  </div>
+</div>
 
 ---
