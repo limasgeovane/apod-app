@@ -17,9 +17,9 @@ final class FavoritesApodPresenterSpy: FavoritesApodPresenterLogic {
         responseFavoritesApodParameterFavoritesApod = favoritesApod
     }
 
-    private(set) var invokedResponseEmptyStateCount = 0
+    private(set) var responseEmptyStateCount = 0
 
     func responseEmptyState() {
-        invokedResponseEmptyStateCount += 1
+        responseEmptyStateCount += 1
     }
 }

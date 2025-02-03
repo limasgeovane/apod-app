@@ -13,10 +13,10 @@ protocol FavoritesApodInteractorLogic {
 }
 
 class FavoritesApodInteractor: FavoritesApodInteractorLogic {
-    private let repository: FavoritesApodRepository
+    private let repository: FavoritesApodRepositoryLogic
     private let presenter: FavoritesApodPresenterLogic
     
-    init(repository: FavoritesApodRepository, presenter: FavoritesApodPresenterLogic) {
+    init(repository: FavoritesApodRepositoryLogic, presenter: FavoritesApodPresenterLogic) {
         self.repository = repository
         self.presenter = presenter
     }

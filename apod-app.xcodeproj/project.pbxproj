@@ -29,6 +29,9 @@
 		4500BF0C2D50712F002F831D /* DefaultDateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4500BF0B2D50712D002F831D /* DefaultDateProvider.swift */; };
 		4500BF102D507272002F831D /* DefaultDateProviderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4500BF0F2D507261002F831D /* DefaultDateProviderSpy.swift */; };
 		4500BF122D5075CF002F831D /* ApodViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4500BF112D5075CC002F831D /* ApodViewControllerTests.swift */; };
+		4500BF172D507928002F831D /* FavoritesApodInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4500BF162D507924002F831D /* FavoritesApodInteractorTests.swift */; };
+		4500BF1A2D507ADC002F831D /* FavoritesApodPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4500BF192D507AD9002F831D /* FavoritesApodPresenterTests.swift */; };
+		4500BF1C2D507BB3002F831D /* FavoritesApodViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4500BF1B2D507BB1002F831D /* FavoritesApodViewControllerTests.swift */; };
 		452D7F8D2D4C65C900584A75 /* FavoritesApodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452D7F8C2D4C65C900584A75 /* FavoritesApodView.swift */; };
 		452D7F8F2D4C660700584A75 /* FavoritesApodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452D7F8E2D4C660700584A75 /* FavoritesApodViewController.swift */; };
 		452D7F912D4C6A0200584A75 /* FavoritesApodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452D7F902D4C6A0200584A75 /* FavoritesApodTableViewCell.swift */; };
@@ -136,6 +139,9 @@
 		4500BF0B2D50712D002F831D /* DefaultDateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDateProvider.swift; sourceTree = "<group>"; };
 		4500BF0F2D507261002F831D /* DefaultDateProviderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDateProviderSpy.swift; sourceTree = "<group>"; };
 		4500BF112D5075CC002F831D /* ApodViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodViewControllerTests.swift; sourceTree = "<group>"; };
+		4500BF162D507924002F831D /* FavoritesApodInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesApodInteractorTests.swift; sourceTree = "<group>"; };
+		4500BF192D507AD9002F831D /* FavoritesApodPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesApodPresenterTests.swift; sourceTree = "<group>"; };
+		4500BF1B2D507BB1002F831D /* FavoritesApodViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesApodViewControllerTests.swift; sourceTree = "<group>"; };
 		452D7F8C2D4C65C900584A75 /* FavoritesApodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesApodView.swift; sourceTree = "<group>"; };
 		452D7F8E2D4C660700584A75 /* FavoritesApodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesApodViewController.swift; sourceTree = "<group>"; };
 		452D7F902D4C6A0200584A75 /* FavoritesApodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesApodTableViewCell.swift; sourceTree = "<group>"; };
@@ -361,6 +367,40 @@
 				4500BF0F2D507261002F831D /* DefaultDateProviderSpy.swift */,
 			);
 			path = DateProvider;
+			sourceTree = "<group>";
+		};
+		4500BF132D5078F2002F831D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				4500BF162D507924002F831D /* FavoritesApodInteractorTests.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		4500BF142D5078FC002F831D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4500BF192D507AD9002F831D /* FavoritesApodPresenterTests.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4500BF152D507901002F831D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4500BF1B2D507BB1002F831D /* FavoritesApodViewControllerTests.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		4500BF182D507935002F831D /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				4500BF132D5078F2002F831D /* Interactor */,
+				4500BF142D5078FC002F831D /* Presenter */,
+				4500BF152D507901002F831D /* ViewController */,
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		452D7F8A2D4C655300584A75 /* ViewController */ = {
@@ -607,6 +647,7 @@
 			children = (
 				45DB93AA2D50440900D2AED8 /* Doubles */,
 				45DB93AB2D50440D00D2AED8 /* Fixtures */,
+				4500BF182D507935002F831D /* Scene */,
 			);
 			path = FavoritesApod;
 			sourceTree = "<group>";
@@ -1154,6 +1195,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4500BF172D507928002F831D /* FavoritesApodInteractorTests.swift in Sources */,
 				4500BEEF2D504D21002F831D /* FavoritesApodViewDelegateSpy.swift in Sources */,
 				4500BEE72D504CEF002F831D /* FavoritesApodInteractorSpy.swift in Sources */,
 				4500BEFF2D5064E1002F831D /* ApodRequestConfigurationTests.swift in Sources */,
@@ -1164,6 +1206,7 @@
 				4500BEDF2D5045E0002F831D /* ApodRepositorySpy.swift in Sources */,
 				4500BEE12D5049B1002F831D /* ApodFixture.swift in Sources */,
 				4500BEEB2D504D0D002F831D /* FavoritesApodViewControllerSpy.swift in Sources */,
+				4500BF1C2D507BB3002F831D /* FavoritesApodViewControllerTests.swift in Sources */,
 				4500BEE32D504BAE002F831D /* ApodViewModelFixture.swift in Sources */,
 				4500BEF32D505234002F831D /* FavoritesApodViewModelFixture.swift in Sources */,
 				4500BF102D507272002F831D /* DefaultDateProviderSpy.swift in Sources */,
@@ -1173,6 +1216,7 @@
 				4500BEED2D504D14002F831D /* FavoritesApodViewSpy.swift in Sources */,
 				4500BF062D506D42002F831D /* ApodPresenterTests.swift in Sources */,
 				4500BEE52D504CE5002F831D /* FavoritesApodRepositorySpy.swift in Sources */,
+				4500BF1A2D507ADC002F831D /* FavoritesApodPresenterTests.swift in Sources */,
 				45DB93B42D5044E400D2AED8 /* ApodPresenterSpy.swift in Sources */,
 				45DB93B62D5044ED00D2AED8 /* ApodViewSpy.swift in Sources */,
 				4500BEF62D50567A002F831D /* ApodRepositoryTests.swift in Sources */,
