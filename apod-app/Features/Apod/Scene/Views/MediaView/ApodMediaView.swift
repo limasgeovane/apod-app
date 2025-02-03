@@ -7,7 +7,7 @@
 
 import UIKit
 import Kingfisher
-import youtube_ios_player_helper
+import YouTubeiOSPlayerHelper
 
 final class ApodMediaView: UIView {
     private let mediaProgressView = ApodMediaProgressView()

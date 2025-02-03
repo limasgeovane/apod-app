@@ -9,11 +9,11 @@
 import Foundation
 
 final class FavoriteApodsViewDelegateSpy: FavoriteApodsViewDelegate {
-    private(set) var FavoriteApodsViewDidApodSelectedCount = 0
-    private(set) var FavoriteApodsViewDidApodSelectedParameterIndexPath: IndexPath?
+    private(set) var favoriteApodsViewDidApodSelectedCount = 0
+    private(set) var favoriteApodsViewDidApodSelectedParameterIndexPath: IndexPath?
 
-    func FavoriteApodsViewDidApodSelected(indexPath: IndexPath) {
-        FavoriteApodsViewDidApodSelectedCount += 1
-        FavoriteApodsViewDidApodSelectedParameterIndexPath = indexPath
+    func favoriteApodsViewDidApodSelected(indexPath: IndexPath) {
+        favoriteApodsViewDidApodSelectedCount += 1
+        favoriteApodsViewDidApodSelectedParameterIndexPath = indexPath
     }
 }

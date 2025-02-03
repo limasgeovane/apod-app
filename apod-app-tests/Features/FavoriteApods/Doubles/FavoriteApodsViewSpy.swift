@@ -25,18 +25,18 @@ final class FavoriteApodsViewSpy: UIView, FavoriteApodsViewLogic {
         }
     }
     
-    private(set) var FavoriteApodsGetterCount = 0
+    private(set) var favoriteApodsGetterCount = 0
     var stubbedFavoriteApods: [FavoriteApodsViewModel] = []
-    private(set) var FavoriteApodsSetterCount = 0
+    private(set) var favoriteApodsSetterCount = 0
     private(set) var invokedFavoriteApods: [FavoriteApodsViewModel] = []
 
-    var FavoriteApods: [FavoriteApodsViewModel] {
+    var favoriteApods: [FavoriteApodsViewModel] {
         get {
-            FavoriteApodsGetterCount += 1
+            favoriteApodsGetterCount += 1
             return stubbedFavoriteApods
         }
         set {
-            FavoriteApodsSetterCount += 1
+            favoriteApodsSetterCount += 1
             invokedFavoriteApods = newValue
         }
     }

@@ -6,6 +6,7 @@
 //
 
 import Alamofire
+import Foundation
 
 struct AlamofireNetworkRequest: NetworkRequester {
     func request(

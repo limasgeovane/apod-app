@@ -43,7 +43,7 @@ final class FavoriteApodsViewControllerTests: XCTestCase {
     }
     
     func test_FavoriteApodsViewDidApodSelected_shoudlRequestSelectFavoriteApod() {
-        sut.FavoriteApodsViewDidApodSelected(indexPath: IndexPath(row: 0, section: 0))
+        sut.favoriteApodsViewDidApodSelected(indexPath: IndexPath(row: 0, section: 0))
         
         XCTAssertEqual(interactorSpy.requestSelectFavoriteApodCount, 1)
         XCTAssertEqual(interactorSpy.requestSelectFavoriteApodParameterIndexPath, IndexPath(row: 0, section: 0))
