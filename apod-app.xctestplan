@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "9FA9DB26-511C-4134-81BB-79849CD6B6A8",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:apod-app.xcodeproj",
+      "identifier" : "45F27CEB2D4BB5220045747A",
+      "name" : "apod-app"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:apod-app.xcodeproj",
+        "identifier" : "45F27D012D4BB5240045747A",
+        "name" : "apod-app-tests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:apod-app.xcodeproj",
+        "identifier" : "45A2E4F82D50835800B84CE0",
+        "name" : "apod-app-snapshot-tests"
+      }
+    }
+  ],
+  "version" : 1
+}

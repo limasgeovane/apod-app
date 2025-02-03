@@ -188,6 +188,7 @@
 		45B5005B2D4DD17B00EE5939 /* Date+ToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ToString.swift"; sourceTree = "<group>"; };
 		45B5005E2D4DDEC900EE5939 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		45B500612D4DDFBC00EE5939 /* FavoriteApodsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteApodsFactory.swift; sourceTree = "<group>"; };
+		45CD99DB2D512050004CCA34 /* apod-app.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "apod-app.xctestplan"; sourceTree = "<group>"; };
 		45DB93712D4E066C00D2AED8 /* URL+YoutubeVideoID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+YoutubeVideoID.swift"; sourceTree = "<group>"; };
 		45DB93732D4E70FA00D2AED8 /* Date+IsEqual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+IsEqual.swift"; sourceTree = "<group>"; };
 		45DB93792D4EEE2700D2AED8 /* FavoriteApod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteApod.swift; sourceTree = "<group>"; };
@@ -771,6 +772,7 @@
 		45F27CE32D4BB5220045747A = {
 			isa = PBXGroup;
 			children = (
+				45CD99DB2D512050004CCA34 /* apod-app.xctestplan */,
 				45F27D632D4BF2D50045747A /* apod-app */,
 				45F27D6B2D4BF2DB0045747A /* apod-app-tests */,
 				45A2E5032D50836800B84CE0 /* apod-app-snapshot-tests */,
