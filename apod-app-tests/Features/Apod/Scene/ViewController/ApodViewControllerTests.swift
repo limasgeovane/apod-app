@@ -21,7 +21,7 @@ final class ApodViewControllerTests: XCTestCase {
         XCTAssertEqual(contentViewSpy.delegateSetterCount, 1)
     }
     
-    func test_viewDidLoad_shouldCallFetchArtists() {
+    func test_viewDidLoad_shouldCallFetchApod() {
         sut.viewDidLoad()
         
         XCTAssertEqual(interactorSpy.requestApodCount, 1)

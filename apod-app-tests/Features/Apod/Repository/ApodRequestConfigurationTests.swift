@@ -8,7 +8,7 @@
 import XCTest
 @testable import apod_app
 
-final class ArtistsConfigurationTests: XCTestCase {
+final class ApodConfigurationTests: XCTestCase {
     var sut = ApodRequestConfiguration(date: "2025-02-02")
 
     func test_path_shouldCorrectPath() {
